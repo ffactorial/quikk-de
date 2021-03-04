@@ -1,7 +1,13 @@
 import React from "react";
+import TitleAndDesc from "../components/meta/TitleAndDesc";
 
 const datenschutzerklaerung = () => {
-  return <div>datenschutzerklaerung</div>;
+  return (
+    <>
+      <TitleAndDesc title="Datenschutzerklärung" desc="Datenschutzerklärung" />
+      <div>datenschutzerklaerung</div>
+    </>
+  );
 };
 
 export default datenschutzerklaerung;

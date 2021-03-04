@@ -1,7 +1,13 @@
 import React from "react";
+import TitleAndDesc from "../components/meta/TitleAndDesc";
 
 const leistungen = () => {
-  return <div>leistungen</div>;
+  return (
+    <>
+      <TitleAndDesc title="Leistungen" desc="Leistungen" />
+      <div>leistungen</div>
+    </>
+  );
 };
 
 export default leistungen;

@@ -6,13 +6,12 @@ const Container = ({ children, ...props }) => {
       {children}
       <style jsx>{`
         .container {
-          height: 100%;
-          width: 100%;
-          padding-right: 15px;
-          padding-left: 15px;
-          margin-right: auto;
-          margin-left: auto;
-          background-color: inherit !important;
+          height: 100% !important;
+          width: 100% !important;
+          padding-right: 15px !important;
+          padding-left: 15px !important;
+          margin-right: auto !important;
+          margin-left: auto !important;
         }
         @media (min-width: 576px) {
           .container {

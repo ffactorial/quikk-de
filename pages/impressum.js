@@ -1,7 +1,13 @@
 import React from "react";
+import TitleAndDesc from "../components/meta/TitleAndDesc";
 
 const impressum = () => {
-  return <div>impressum</div>;
+  return (
+    <>
+      <TitleAndDesc title="Impressum" desc="Impressum" />
+      <div>impressum</div>
+    </>
+  );
 };
 
 export default impressum;

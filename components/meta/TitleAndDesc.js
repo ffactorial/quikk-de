@@ -2,11 +2,11 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const TitleAndDesc = (title = "", desc = "") => {
+const TitleAndDesc = ({ title = "", desc = "" }) => {
   const router = useRouter();
   const isHome = router.pathname === "/";
 
-  title = isHome ? title : `${title} - WatchTrade24`;
+  title = isHome ? title : `${title} - QUIKK`;
 
   return (
     <Head>

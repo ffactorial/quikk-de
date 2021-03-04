@@ -1,7 +1,13 @@
 import React from "react";
+import TitleAndDesc from "../components/meta/TitleAndDesc";
 
 const wir = () => {
-  return <div>über uns</div>;
+  return (
+    <>
+      <TitleAndDesc title="Über uns" desc="Über uns" />
+      <div>über uns</div>
+    </>
+  );
 };
 
 export default wir;
