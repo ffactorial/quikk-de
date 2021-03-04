@@ -1,7 +1,21 @@
-import '../styles/globals.css'
+import { GeistProvider, CssBaseline } from "@geist-ui/react";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
+import DefaultSEO from "../components/meta/DefaultSEO";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const _app = ({ Component, pageProps }) => {
+  return (
+    <GeistProvider>
+      <CssBaseline />
+      <DefaultSEO />
+      <Header />
+      <main>
+        <Component {...pageProps} />
+      </main>
+      <Footer />
+    </GeistProvider>
+  );
+};
 
-export default MyApp
+export default _app;
