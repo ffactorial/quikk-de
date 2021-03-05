@@ -69,7 +69,7 @@ const Footer = () => {
       <Container>
         <Grid.Container gap={LARGE_GAP}>
           {content.map((_, i) => (
-            <Grid key={i} xs={24} sm={12} md={24 / content.length}>
+            <Grid key={i} xs={12} sm={12} md={24 / content.length}>
               {_}
             </Grid>
           ))}

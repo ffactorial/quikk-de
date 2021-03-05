@@ -14,7 +14,7 @@ const ContactLinks = () => {
           info@quikk.de
         </ExternalLinkWithIcon>,
         <ExternalLinkWithIcon href="tel:+4915233902667" icon={<Phone />}>
-          +49 (0) 1523 390 2667
+          +49 1523 390 2667
         </ExternalLinkWithIcon>,
         <InternalLinkWithIcon href="/kontakt" icon={<Send />}>
           Kontaktformular

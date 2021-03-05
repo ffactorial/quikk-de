@@ -21,3 +21,9 @@ const _app = ({ Component, pageProps }) => {
 };
 
 export default _app;
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  };
+}
