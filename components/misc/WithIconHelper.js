@@ -14,7 +14,7 @@ const style = {
 
 const WithIcon = ({ icon, children }) => (
   <>
-    {React.cloneElement(icon, { size: "1em" })}
+    {React.cloneElement(icon, { size: ".8em" })}
     <Spacer x={XTRA_SMALL_GAP} y={0} />
     {children}
   </>

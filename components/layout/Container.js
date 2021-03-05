@@ -1,35 +1,41 @@
 import React from "react";
 
 const Container = ({ children, ...props }) => {
+  const paddingInPx = 15;
   return (
-    <div className="container" {...props}>
+    <div className="quikkontainer" {...props}>
       {children}
       <style jsx>{`
-        .container {
-          height: 100% !important;
-          width: 100% !important;
-          padding-right: 15px !important;
-          padding-left: 15px !important;
-          margin-right: auto !important;
-          margin-left: auto !important;
+        .quikkontainer {
+          height: 100%;
+          width: 100%;
+          padding-right: ${paddingInPx}px;
+          padding-left: ${paddingInPx}px;
+          margin-right: auto;
+          margin-left: auto;
+        }
+        @media (max-width: 575px) {
+          .quikkontainer {
+            max-width: calc(100vw - ${paddingInPx * 2}px) !important;
+          }
         }
         @media (min-width: 576px) {
-          .container {
+          .quikkontainer {
             max-width: 540px !important;
           }
         }
         @media (min-width: 768px) {
-          .container {
+          .quikkontainer {
             max-width: 720px !important;
           }
         }
         @media (min-width: 992px) {
-          .container {
+          .quikkontainer {
             max-width: 960px !important;
           }
         }
         @media (min-width: 1200px) {
-          .container {
+          .quikkontainer {
             max-width: 1140px !important;
           }
         }

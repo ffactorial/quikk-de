@@ -1,6 +1,7 @@
 import { Description, Divider, Grid, Spacer } from "@geist-ui/react";
 import React from "react";
-import { LARGE_GAP, MEDIUM_GAP, SMALL_GAP } from "../../src/constants";
+import { LARGE_GAP, MEDIUM_GAP } from "../../src/constants";
+import LocationLinks from "./footer/LocationLinks";
 import Container from "./Container";
 import LegalLinks from "./footer/LegalLinks";
 import ContactLinks from "./footer/ContactLinks";
@@ -9,7 +10,7 @@ import SocialLinks from "./footer/SocialLinks";
 
 const Footer = () => {
   const SanitizeFontWeight = ({ children }) => (
-    <div style={{ fontWeight: 400 }}>{children}</div>
+    <span style={{ fontWeight: "normal" }}>{children}</span>
   );
 
   const content = [
@@ -26,6 +27,14 @@ const Footer = () => {
       content={
         <SanitizeFontWeight>
           <ContactLinks />
+        </SanitizeFontWeight>
+      }
+    />,
+    <Description
+      title="Vor Ort"
+      content={
+        <SanitizeFontWeight>
+          <LocationLinks />
         </SanitizeFontWeight>
       }
     />,
@@ -57,11 +66,10 @@ const Footer = () => {
               {_}
             </Grid>
           ))}
-          <Grid xs={24}>
-            <Description title={<>© {new Date().getFullYear()} QUIKK</>} />
-          </Grid>
         </Grid.Container>
-        <Spacer y={SMALL_GAP} />
+        <Divider />
+        <Description title={<>© {new Date().getFullYear()} QUIKK Software</>} />
+        <Spacer y={MEDIUM_GAP} />
       </Container>
     </footer>
   );
