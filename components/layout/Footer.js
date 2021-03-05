@@ -61,7 +61,7 @@ const Footer = () => {
   return (
     <footer
       style={{
-        backgroundColor: theme.palette.accents_1,
+        // backgroundColor: theme.palette.accents_1,
         borderTop: `1px solid ${theme.palette.accents_2}`,
       }}
     >

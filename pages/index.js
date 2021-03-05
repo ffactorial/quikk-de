@@ -1,5 +1,6 @@
 import React from "react";
-import Container from "../components/layout/Container";
+import Hero from "../components/index/Hero";
+import Services from "../components/index/Services";
 import TitleAndDesc from "../components/meta/TitleAndDesc";
 
 const index = () => {
@@ -9,7 +10,8 @@ const index = () => {
         title="QUIKK Software - Agile Softwareentwicklung aus Minden"
         desc="Entdecken Sie QUIKK's digitale Dienstleistungen und profitieren Sie von individuellen Softwarelösungen, mobilen Apps und einzigartigen Webauftritten."
       />
-      <Container>Index</Container>
+      <Hero />
+      <Services />
     </>
   );
 };

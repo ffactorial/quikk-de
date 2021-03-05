@@ -15,7 +15,12 @@ const InternalLink = ({
 
   return (
     <Link href={href} {...rest}>
-      <GeistLink href={href} {...geistLinkProps} className={className}>
+      <GeistLink
+        href={href}
+        {...geistLinkProps}
+        className={className}
+        {...rest}
+      >
         {children}
       </GeistLink>
     </Link>

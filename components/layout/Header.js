@@ -29,7 +29,7 @@ const Header = () => {
           alignItems="center"
         >
           <Grid>
-            <Text b>
+            <Text p style={{ margin: 0, fontWeight: 600 }}>
               <InternalLink href="/">QUIKK</InternalLink>
             </Text>
           </Grid>

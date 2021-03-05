@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Spacer } from "@geist-ui/react";
-import { MEDIUM_GAP, XTRA_SMALL_GAP } from "../../../src/constants";
+import { SMALL_GAP, XTRA_SMALL_GAP } from "../../../src/constants";
 
 export const HideOnMobile = ({ children }) => (
   <Grid xs={0} sm={0} md>
@@ -17,7 +17,7 @@ export const ShowOnMobile = ({ children }) => (
 export const Spacing = () => (
   <>
     <HideOnMobile>
-      <Spacer y={MEDIUM_GAP} />
+      <Spacer y={SMALL_GAP} />
     </HideOnMobile>
     <ShowOnMobile>
       <Spacer y={XTRA_SMALL_GAP} />
