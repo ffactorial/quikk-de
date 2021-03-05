@@ -1,13 +1,14 @@
-import { Button, Grid, Spacer, Tabs, Text } from "@geist-ui/react";
-import { useRouter } from "next/router";
+import { Grid, Text, useTheme } from "@geist-ui/react";
 import React from "react";
 import { MEDIUM_GAP } from "../../src/constants";
 import InternalLink from "../misc/InternalLink";
 import Container from "./Container";
-import { Menu } from "@geist-ui/react-icons";
+import { Spacing } from "./header/ResponsiveUtils";
+import DesktopNavBar from "./header/DesktopNavBar";
+import MobileNavBar from "./header/MobileNavBar";
 
 const Header = () => {
-  const router = useRouter();
+  const theme = useTheme();
 
   const pathnames = {
     Home: "/",
@@ -19,8 +20,8 @@ const Header = () => {
   };
 
   return (
-    <header>
-      <Spacer y={MEDIUM_GAP} />
+    <header style={{ borderBottom: `1px solid ${theme.palette.accents_2}` }}>
+      <Spacing />
       <Container>
         <Grid.Container
           gap={MEDIUM_GAP}
@@ -33,34 +34,12 @@ const Header = () => {
             </Text>
           </Grid>
           <Grid>
-            <Grid xs={0} sm={0} md>
-              <Tabs
-                initialValue={router.pathname}
-                value={router.pathname}
-                onChange={(pathname) => router.push(pathname)}
-                hideDivider
-              >
-                {Object.entries(pathnames).map(([key, value]) => (
-                  <Tabs.Item key={key} label={key} value={value} />
-                ))}
-              </Tabs>
-            </Grid>
-            <Grid xs sm md={0}>
-              <Button
-                auto
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Menu />
-              </Button>
-            </Grid>
+            <DesktopNavBar pathnames={pathnames} />
+            <MobileNavBar pathnames={pathnames} />
           </Grid>
         </Grid.Container>
-        <Spacer y={MEDIUM_GAP} />
       </Container>
+      <Spacing />
     </header>
   );
 };

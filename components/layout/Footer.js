@@ -1,4 +1,4 @@
-import { Description, Divider, Grid, Spacer } from "@geist-ui/react";
+import { Description, Divider, Grid, Spacer, useTheme } from "@geist-ui/react";
 import React from "react";
 import { LARGE_GAP, MEDIUM_GAP } from "../../src/constants";
 import LocationLinks from "./footer/LocationLinks";
@@ -9,6 +9,8 @@ import CompanyLinks from "./footer/CompanyLinks";
 import SocialLinks from "./footer/SocialLinks";
 
 const Footer = () => {
+  const theme = useTheme();
+
   const SanitizeFontWeight = ({ children }) => (
     <span style={{ fontWeight: "normal" }}>{children}</span>
   );
@@ -57,7 +59,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer>
+    <footer
+      style={{
+        backgroundColor: theme.palette.accents_1,
+        borderTop: `1px solid ${theme.palette.accents_2}`,
+      }}
+    >
       <Spacer y={MEDIUM_GAP} />
       <Container>
         <Grid.Container gap={LARGE_GAP}>
