@@ -11,21 +11,22 @@ const Hero = () => {
       <Container>
         <Spacer y={XTRA_LARGE_GAP} />
         <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
-          <Grid xs={24} sm={24} md={12} direction="column">
-            <Text h2 style={{ margin: 0, fontWeight: 800 }}>
-              Software und Webdesign
-            </Text>
-            <Text type="secondary">
+          <Grid xs={24} sm={24} md={14} direction="column">
+            <Text h1>Software und Webdesign</Text>
+            <Text type="secondary" style={{ marginTop: 0 }}>
               Wir setzen Ihre Vision in die Tat um. Egal ob Webauftritt,
-              E-Commerce Lösung, klassische Software oder mobile App - mit
-              unserer Erfahrung in der Anwendungs- und Webentwicklung und einem
-              modernen Technologiestack ist alles möglich.
+              Onlineshop, klassische Software oder mobile App - mit unserer
+              Erfahrung in der Anwendungs- und Webentwicklung und einem modernen
+              Technologiestack sind die Möglichkeiten grenzenlos.
+            </Text>
+            <Text type="secondary" style={{ marginTop: 0 }}>
+              Können wir auch Sie bei Ihrem Projekt unterstützen?
             </Text>
             <Grid.Container gap={SMALL_GAP}>
               <Grid xs={24} sm={24} md={12}>
                 <InternalLink href="/kontakt" style={{ width: "100%" }}>
                   <Button type="success" style={{ width: "100%" }}>
-                    kontakt
+                    Kontakt
                   </Button>
                 </InternalLink>
               </Grid>
@@ -38,8 +39,8 @@ const Hero = () => {
               </Grid>
             </Grid.Container>
           </Grid>
-          <Grid xs={24} sm={24} md={12}>
-            <Image src={hero} />
+          <Grid xs={24} sm={24} md={10}>
+            <Image src={hero} alt="QUIKK Software Softwareentwicklung" />
           </Grid>
         </Grid.Container>
         <Spacer y={XTRA_LARGE_GAP} />

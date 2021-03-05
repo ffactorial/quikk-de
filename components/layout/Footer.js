@@ -59,12 +59,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer
-      style={{
-        // backgroundColor: theme.palette.accents_1,
-        borderTop: `1px solid ${theme.palette.accents_2}`,
-      }}
-    >
+    <footer>
       <Spacer y={MEDIUM_GAP} />
       <Container>
         <Grid.Container gap={LARGE_GAP}>

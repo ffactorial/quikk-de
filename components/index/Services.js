@@ -74,6 +74,7 @@ const Services = () => {
       style={{
         backgroundColor: theme.palette.accents_1,
         borderTop: `1px solid ${theme.palette.accents_2}`,
+        borderBottom: `1px solid ${theme.palette.accents_2}`,
       }}
     >
       <Spacer y={XTRA_LARGE_GAP} />
