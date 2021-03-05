@@ -2,7 +2,7 @@ import { Card, Description, Display, Grid } from "@geist-ui/react";
 import React from "react";
 import InternalLink from "../misc/InternalLink";
 
-const Service = ({ title, content, icon }) => {
+const ServiceCard = ({ title, content, icon }) => {
   return (
     <Grid xs={24} sm={12} md={8}>
       <InternalLink href="/leistungen" style={{ width: "100%" }}>
@@ -30,4 +30,4 @@ const Service = ({ title, content, icon }) => {
   );
 };
 
-export default Service;
+export default ServiceCard;

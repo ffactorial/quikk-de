@@ -19,9 +19,6 @@ const Hero = () => {
               Erfahrung in der Anwendungs- und Webentwicklung und einem modernen
               Technologiestack sind die Möglichkeiten grenzenlos.
             </Text>
-            <Text type="secondary" style={{ marginTop: 0 }}>
-              Können wir auch Sie bei Ihrem Projekt unterstützen?
-            </Text>
             <Grid.Container gap={SMALL_GAP}>
               <Grid xs={24} sm={24} md={12}>
                 <InternalLink href="/kontakt" style={{ width: "100%" }}>

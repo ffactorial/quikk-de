@@ -2,7 +2,7 @@ import { Divider, Grid, Spacer, Text, useTheme } from "@geist-ui/react";
 import React from "react";
 import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";
-import Service from "./Service";
+import ServiceCard from "./ServiceCard";
 import {
   Layout,
   Search,
@@ -14,11 +14,12 @@ import {
   FastForward,
   Compass,
 } from "@geist-ui/react-icons";
+import TitleAndSubtitle from "../misc/TitleAndSubtitle";
 
 const Services = () => {
   const theme = useTheme();
 
-  const content = [
+  const services = [
     {
       title: "Softwareentwicklung",
       content: "Maßgeschneiderte Software als Desktop- und Webanwendung.",
@@ -70,26 +71,15 @@ const Services = () => {
   ];
 
   return (
-    <section
-      style={{
-        backgroundColor: theme.palette.accents_1,
-        borderTop: `1px solid ${theme.palette.accents_2}`,
-        borderBottom: `1px solid ${theme.palette.accents_2}`,
-      }}
-    >
+    <section>
       <Spacer y={XTRA_LARGE_GAP} />
       <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
-        <Grid xs={24} direction="column">
-          <Text h2 style={{ width: "100%", textAlign: "center" }}>
-            Unser Fokus
-          </Text>
-          <Divider type="success">WAS WIR BIETEN</Divider>
-        </Grid>
+        <TitleAndSubtitle title="Unser Fokus" subtitle="Was wir bieten" />
       </Grid.Container>
       <Container>
         <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
-          {content.map(({ title, content, href, icon }, i) => (
-            <Service key={i} {...{ title, content, href, icon }} />
+          {services.map((service, i) => (
+            <ServiceCard key={i} {...service} />
           ))}
         </Grid.Container>
       </Container>
