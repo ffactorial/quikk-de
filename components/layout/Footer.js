@@ -33,14 +33,6 @@ const Footer = () => {
       }
     />,
     <Description
-      title="Vor Ort"
-      content={
-        <SanitizeFontWeight>
-          <LocationLinks />
-        </SanitizeFontWeight>
-      }
-    />,
-    <Description
       title="Unternehmen"
       content={
         <SanitizeFontWeight>
@@ -53,6 +45,14 @@ const Footer = () => {
       content={
         <SanitizeFontWeight>
           <SocialLinks />
+        </SanitizeFontWeight>
+      }
+    />,
+    <Description
+      title="Vor Ort"
+      content={
+        <SanitizeFontWeight>
+          <LocationLinks />
         </SanitizeFontWeight>
       }
     />,
