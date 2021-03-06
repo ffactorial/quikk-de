@@ -69,14 +69,14 @@ const ServiceCard = ({
           caption={
             <Description
               title={
-                <span style={{ textAlign: "center", width: "100%" }}>
+                <Text b style={{ textAlign: "center", width: "100%" }}>
                   {name}
-                </span>
+                </Text>
               }
               style={{ textAlign: "center" }}
               content={
                 <>
-                  <Text b>{title}</Text>
+                  <Text style={{ fontWeight: "normal" }}>{title}</Text>
                   <Spacer />
                   <Socials />
                   {desc.length > 0 && (

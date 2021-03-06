@@ -1,4 +1,4 @@
-import { Grid, Note, Spacer } from "@geist-ui/react";
+import { Grid, Spacer } from "@geist-ui/react";
 import React from "react";
 import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";
@@ -53,12 +53,6 @@ const People = () => {
       </Grid.Container>
       <Container>
         <Grid.Container gap={XTRA_LARGE_GAP}>
-          <Grid xs={24}>
-            <Note style={{ width: "100%" }} label="tl;dr">
-              Wir sind ein junges und dynamisches Team aus engagierten
-              Informatikern.
-            </Note>
-          </Grid>
           {people.map((person, i) => (
             <PeopleCard key={i} {...person} />
           ))}

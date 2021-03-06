@@ -1,4 +1,4 @@
-import { Card, Description, Display, Grid } from "@geist-ui/react";
+import { Card, Description, Display, Grid, Text } from "@geist-ui/react";
 import React from "react";
 import InternalLink from "../misc/InternalLink";
 
@@ -11,11 +11,13 @@ const ServiceCard = ({ title, content, icon }) => {
             caption={
               <Description
                 title={
-                  <span style={{ textAlign: "center", width: "100%" }}>
+                  <Text b style={{ textAlign: "center", width: "100%" }}>
                     {title}
-                  </span>
+                  </Text>
                 }
-                content={content}
+                content={
+                  <Text style={{ fontWeight: "normal" }}>{content}</Text>
+                }
                 style={{ textAlign: "center" }}
               />
             }

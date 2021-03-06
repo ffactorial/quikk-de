@@ -1,4 +1,13 @@
-import { Description, Divider, Grid, Spacer, useTheme } from "@geist-ui/react";
+import {
+  CssBaseline,
+  Description,
+  Divider,
+  GeistProvider,
+  Grid,
+  Spacer,
+  Text,
+  useTheme,
+} from "@geist-ui/react";
 import React from "react";
 import { LARGE_GAP, MEDIUM_GAP } from "../../src/constants";
 import LocationLinks from "./footer/LocationLinks";
@@ -7,12 +16,13 @@ import LegalLinks from "./footer/LegalLinks";
 import ContactLinks from "./footer/ContactLinks";
 import CompanyLinks from "./footer/CompanyLinks";
 import SocialLinks from "./footer/SocialLinks";
+import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
 
 const Footer = () => {
   const theme = useTheme();
 
   const SanitizeFontWeight = ({ children }) => (
-    <span style={{ fontWeight: "normal" }}>{children}</span>
+    <Text style={{ fontWeight: "normal" }}>{children}</Text>
   );
 
   const content = [
@@ -59,21 +69,23 @@ const Footer = () => {
   ];
 
   return (
-    <footer>
-      <Spacer y={MEDIUM_GAP} />
-      <Container>
-        <Grid.Container gap={LARGE_GAP}>
-          {content.map((_, i) => (
-            <Grid key={i} xs={12} sm={12} md={24 / content.length}>
-              {_}
-            </Grid>
-          ))}
-        </Grid.Container>
-        <Divider />
-        <Description title={<>© {new Date().getFullYear()} QUIKK Software</>} />
+    <GeistProvider themes={[QUIKK_light, QUIKK_dark]} themeType="QUIKK_dark">
+      <footer style={{ background: theme.palette.foreground }}>
         <Spacer y={MEDIUM_GAP} />
-      </Container>
-    </footer>
+        <Container>
+          <Grid.Container gap={LARGE_GAP}>
+            {content.map((_, i) => (
+              <Grid key={i} xs={12} sm={12} md={24 / content.length}>
+                {_}
+              </Grid>
+            ))}
+          </Grid.Container>
+          <Divider />
+          <Description title={`© ${new Date().getFullYear()} QUIKK Software`} />
+          <Spacer y={MEDIUM_GAP} />
+        </Container>
+      </footer>
+    </GeistProvider>
   );
 };
 

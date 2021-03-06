@@ -1,4 +1,4 @@
-import { Divider, Grid, Spacer, Text, useTheme } from "@geist-ui/react";
+import { Grid, Spacer, useTheme } from "@geist-ui/react";
 import React from "react";
 import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";

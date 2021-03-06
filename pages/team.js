@@ -1,8 +1,8 @@
 import React from "react";
 import TitleAndDesc from "../components/meta/TitleAndDesc";
-import People from "../components/wir/People";
+import People from "../components/team/People";
 
-const wir = () => {
+const team = () => {
   return (
     <>
       <TitleAndDesc title="Über uns" desc="Über uns" />
@@ -11,4 +11,4 @@ const wir = () => {
   );
 };
 
-export default wir;
+export default team;

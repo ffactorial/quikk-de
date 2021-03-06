@@ -6,7 +6,7 @@ const CompanyLinks = () => {
   return (
     <Links
       content={[
-        <InternalLink href="/wir">Über uns</InternalLink>,
+        <InternalLink href="/team">Über uns</InternalLink>,
         <InternalLink href="/leistungen">Leistungen</InternalLink>,
         <InternalLink href="/projekte">Projekte</InternalLink>,
         <InternalLink href="/blog">Blog</InternalLink>,
