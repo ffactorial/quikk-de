@@ -5,13 +5,14 @@ export const QUIKK_light = Themes.createFromLight({
   palette: {
     foreground: "#21242D",
     background: "#fefefe",
+    success: "#FF584F",
   },
 });
 
 export const QUIKK_dark = Themes.createFromDark({
   type: "QUIKK_dark",
   palette: {
-    foreground: "#F5F6FA",
+    foreground: "#fefefe",
     background: "#21242D",
   },
 });

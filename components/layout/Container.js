@@ -1,7 +1,7 @@
 import React from "react";
 
-const Container = ({ children, ...props }) => {
-  const paddingInPx = 15;
+const Container = ({ children, spacing = false, x = 1, ...props }) => {
+  const paddingInPx = 42;
   return (
     <div className="quikkontainer" {...props}>
       {children}
@@ -9,8 +9,7 @@ const Container = ({ children, ...props }) => {
         .quikkontainer {
           height: 100%;
           width: 100%;
-          padding-right: ${paddingInPx}px;
-          padding-left: ${paddingInPx}px;
+          padding: ${spacing ? 64 * x : 0}px ${paddingInPx}px;
           margin-right: auto;
           margin-left: auto;
         }

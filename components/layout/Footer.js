@@ -1,5 +1,4 @@
 import {
-  CssBaseline,
   Description,
   Divider,
   GeistProvider,
@@ -9,7 +8,7 @@ import {
   useTheme,
 } from "@geist-ui/react";
 import React from "react";
-import { LARGE_GAP, MEDIUM_GAP } from "../../src/constants";
+import { LARGE_GAP, XTRA_LARGE_GAP } from "../../src/constants";
 import LocationLinks from "./footer/LocationLinks";
 import Container from "./Container";
 import LegalLinks from "./footer/LegalLinks";
@@ -71,8 +70,7 @@ const Footer = () => {
   return (
     <GeistProvider themes={[QUIKK_light, QUIKK_dark]} themeType="QUIKK_dark">
       <footer style={{ background: theme.palette.foreground }}>
-        <Spacer y={MEDIUM_GAP} />
-        <Container>
+        <Container spacing>
           <Grid.Container gap={LARGE_GAP}>
             {content.map((_, i) => (
               <Grid key={i} xs={12} sm={12} md={24 / content.length}>
@@ -82,7 +80,6 @@ const Footer = () => {
           </Grid.Container>
           <Divider />
           <Description title={`© ${new Date().getFullYear()} QUIKK Software`} />
-          <Spacer y={MEDIUM_GAP} />
         </Container>
       </footer>
     </GeistProvider>

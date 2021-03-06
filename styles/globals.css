@@ -11,3 +11,8 @@
 header .tabs .content {
   padding: 0 !important;
 }
+
+.mobile-menu {
+  position: fixed !important;
+  top: 64px !important;
+}

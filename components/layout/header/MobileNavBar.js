@@ -17,6 +17,7 @@ const MobileNavBar = ({ pathnames }) => {
           </Popover.Item>
         ))}
         placement="bottomEnd"
+        portalClassName="mobile-menu"
         hideArrow
       >
         <Button

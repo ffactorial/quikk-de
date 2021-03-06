@@ -1,4 +1,4 @@
-import { Grid, Text, useTheme } from "@geist-ui/react";
+import { GeistProvider, Grid, Image, Text, useTheme } from "@geist-ui/react";
 import React from "react";
 import { MEDIUM_GAP } from "../../src/constants";
 import InternalLink from "../misc/InternalLink";
@@ -6,6 +6,8 @@ import Container from "./Container";
 import { Spacing } from "./header/ResponsiveUtils";
 import DesktopNavBar from "./header/DesktopNavBar";
 import MobileNavBar from "./header/MobileNavBar";
+import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
+import quikk_logo from "../../assets/images/xd.svg";
 
 const Header = () => {
   const theme = useTheme();
@@ -20,27 +22,33 @@ const Header = () => {
   };
 
   return (
-    <header style={{ borderBottom: `1px solid ${theme.palette.accents_2}` }}>
-      <Spacing />
-      <Container>
-        <Grid.Container
-          gap={MEDIUM_GAP}
-          justify="space-between"
-          alignItems="center"
-        >
-          <Grid>
-            <Text p style={{ margin: 0, fontWeight: 600 }}>
-              <InternalLink href="/">QUIKK</InternalLink>
-            </Text>
-          </Grid>
-          <Grid>
-            <DesktopNavBar pathnames={pathnames} />
-            <MobileNavBar pathnames={pathnames} />
-          </Grid>
-        </Grid.Container>
-      </Container>
-      <Spacing />
-    </header>
+    <GeistProvider themes={[QUIKK_light, QUIKK_dark]} themeType="QUIKK_dark">
+      <header
+        style={{
+          background: theme.palette.foreground,
+          position: "fixed",
+          top: 0,
+          width: "100%",
+          zIndex: 99,
+        }}
+      >
+        <Spacing />
+        <Container>
+          <Grid.Container gap={0} justify="space-between" alignItems="center">
+            <Grid>
+              <InternalLink href="/">
+                <Image alt="QUIKK Software" src={quikk_logo} />
+              </InternalLink>
+            </Grid>
+            <Grid>
+              <DesktopNavBar pathnames={pathnames} />
+              <MobileNavBar pathnames={pathnames} />
+            </Grid>
+          </Grid.Container>
+        </Container>
+        <Spacing />
+      </header>
+    </GeistProvider>
   );
 };
 

@@ -14,11 +14,9 @@ import {
   FastForward,
   Compass,
 } from "@geist-ui/react-icons";
-import TitleAndSubtitle from "../misc/TitleAndSubtitle";
+import Title from "../misc/Title";
 
 const Services = () => {
-  const theme = useTheme();
-
   const services = [
     {
       title: "Softwareentwicklung",
@@ -71,19 +69,17 @@ const Services = () => {
   ];
 
   return (
-    <section>
-      <Spacer y={XTRA_LARGE_GAP} />
-      <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
-        <TitleAndSubtitle title="Unser Fokus" subtitle="Was wir bieten" />
-      </Grid.Container>
-      <Container>
+    <section style={{ background: "#F4F5F8" }}>
+      <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
+          <Grid xs={24}>
+            <Title title="Unser Fokus" />
+          </Grid>
           {services.map((service, i) => (
             <ServiceCard key={i} {...service} />
           ))}
         </Grid.Container>
       </Container>
-      <Spacer y={XTRA_LARGE_GAP} />
     </section>
   );
 };

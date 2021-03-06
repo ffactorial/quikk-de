@@ -3,16 +3,26 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import DefaultSEO from "../components/meta/DefaultSEO";
 import { QUIKK_light } from "../styles/themes";
-
 import "../styles/globals.css";
+import useHeaderHeight from "../components/hooks/useHeaderHeight";
+import React, { useEffect, useState } from "react";
 
 const _app = ({ Component, pageProps }) => {
+  const [headerHeight, setHeaderHeight] = useState("0px");
+
+  useEffect(() => {
+    const main = document.getElementsByTagName("main")[0];
+    const height = useHeaderHeight();
+    main.setAttribute("style", `padding-top: ${height}`);
+    setHeaderHeight(`${useHeaderHeight()}px`);
+  }, [useHeaderHeight]);
+
   return (
     <GeistProvider themes={[QUIKK_light]} themeType="QUIKK_light">
       <CssBaseline />
       <DefaultSEO />
       <Header />
-      <main>
+      <main style={{ paddingTop: `${headerHeight}` }}>
         <Component {...pageProps} />
       </main>
       <Footer />

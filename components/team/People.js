@@ -2,7 +2,7 @@ import { Grid, Spacer } from "@geist-ui/react";
 import React from "react";
 import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";
-import TitleAndSubtitle from "../misc/TitleAndSubtitle";
+import Title from "../misc/Title";
 import PeopleCard from "./PeopleCard";
 import lukas from "../../assets/images/lukas.jpg";
 import joyce from "../../assets/images/joyce.jpg";
@@ -46,20 +46,18 @@ const People = () => {
   ];
 
   return (
-    <>
-      <Spacer y={XTRA_LARGE_GAP} />
-      <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
-        <TitleAndSubtitle title="Über uns" subtitle="Wer wir sind" />
-      </Grid.Container>
-      <Container>
+    <section>
+      <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP}>
+          <Grid xs={24}>
+            <Title title="Über uns" />
+          </Grid>
           {people.map((person, i) => (
             <PeopleCard key={i} {...person} />
           ))}
         </Grid.Container>
       </Container>
-      <Spacer y={XTRA_LARGE_GAP} />
-    </>
+    </section>
   );
 };
 
