@@ -17,6 +17,8 @@ import {
 import Title from "../misc/Title";
 
 const Services = () => {
+  const theme = useTheme();
+
   const services = [
     {
       title: "Softwareentwicklung",
@@ -69,7 +71,7 @@ const Services = () => {
   ];
 
   return (
-    <section style={{ background: "#F4F5F8" }}>
+    <section style={{ background: theme.palette.accents_1 }}>
       <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
           <Grid xs={24}>

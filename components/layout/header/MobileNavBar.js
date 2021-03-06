@@ -1,10 +1,12 @@
-import { Button, Popover } from "@geist-ui/react";
+import { Button, Popover, Text, useTheme } from "@geist-ui/react";
 import { Menu } from "@geist-ui/react-icons";
 import React, { useState } from "react";
 import InternalLink from "../../misc/InternalLink";
 import { ShowOnMobile } from "./ResponsiveUtils";
 
 const MobileNavBar = ({ pathnames }) => {
+  const theme = useTheme();
+
   const [navBarOpen, setNavBarOpen] = useState(false);
   return (
     <ShowOnMobile>
@@ -13,7 +15,11 @@ const MobileNavBar = ({ pathnames }) => {
         onVisibleChange={(visible) => setNavBarOpen(visible)}
         content={Object.entries(pathnames).map(([key, value]) => (
           <Popover.Item key={key} onClick={() => setNavBarOpen(false)}>
-            <InternalLink href={value}>{key}</InternalLink>
+            <Text
+              style={{ fontWeight: "normal", color: theme.palette.foreground }}
+            >
+              <InternalLink href={value}>{key}</InternalLink>
+            </Text>
           </Popover.Item>
         ))}
         placement="bottomEnd"
@@ -29,7 +35,7 @@ const MobileNavBar = ({ pathnames }) => {
           }}
           onClick={() => setNavBarOpen(!navBarOpen)}
         >
-          <Menu />
+          <Menu color={theme.palette.foreground} />
         </Button>
       </Popover>
     </ShowOnMobile>

@@ -6,6 +6,7 @@ import {
   Grid,
   Spacer,
   Text,
+  useTheme,
 } from "@geist-ui/react";
 import { Github, Home, Linkedin, Mail } from "@geist-ui/react-icons";
 import React from "react";
@@ -22,6 +23,8 @@ const ServiceCard = ({
   avatar = "",
   desc = "",
 }) => {
+  const theme = useTheme();
+
   const enteredSocials = Object.entries({
     linkedin,
     github,
@@ -64,25 +67,36 @@ const ServiceCard = ({
 
   return (
     <Grid xs={24} sm={12} md={8}>
-      <Card hoverable>
+      <Card>
         <Display
           caption={
             <Description
               title={
-                <Text b style={{ textAlign: "center", width: "100%" }}>
+                <Text
+                  b
+                  style={{
+                    textAlign: "center",
+                    width: "100%",
+                    color: theme.palette.foreground,
+                  }}
+                >
                   {name}
                 </Text>
               }
               style={{ textAlign: "center" }}
               content={
                 <>
-                  <Text style={{ fontWeight: "normal" }}>{title}</Text>
+                  <Text style={{ fontWeight: "normal" }} type="secondary">
+                    {title}
+                  </Text>
                   <Spacer />
                   <Socials />
                   {desc.length > 0 && (
                     <>
                       <Spacer />
-                      <Text style={{ textAlign: "start" }}>{desc}</Text>
+                      <Text style={{ textAlign: "start" }} type="secondary">
+                        {desc}
+                      </Text>
                     </>
                   )}
                 </>

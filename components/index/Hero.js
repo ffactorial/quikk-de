@@ -2,12 +2,20 @@ import { Button, Grid, Image, Text } from "@geist-ui/react";
 import React from "react";
 import { MEDIUM_GAP, XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";
-import hero from "../../assets/images/hero.svg";
 import InternalLink from "../misc/InternalLink";
+import hero from "../../assets/images/hero.svg";
 
 const Hero = () => {
   return (
-    <section>
+    <section
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "80vh",
+      }}
+    >
       <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
           <Grid xs={24} sm={24} md={14} direction="column">
@@ -23,7 +31,7 @@ const Hero = () => {
               <Grid xs={24} sm={24} md={12}>
                 <InternalLink href="/kontakt" style={{ width: "100%" }}>
                   <Button type="success" style={{ width: "100%" }}>
-                    Kontakt
+                    Kontakt aufnehmen
                   </Button>
                 </InternalLink>
               </Grid>

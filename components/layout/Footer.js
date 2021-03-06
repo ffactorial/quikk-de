@@ -3,12 +3,11 @@ import {
   Divider,
   GeistProvider,
   Grid,
-  Spacer,
   Text,
   useTheme,
 } from "@geist-ui/react";
 import React from "react";
-import { LARGE_GAP, XTRA_LARGE_GAP } from "../../src/constants";
+import { LARGE_GAP } from "../../src/constants";
 import LocationLinks from "./footer/LocationLinks";
 import Container from "./Container";
 import LegalLinks from "./footer/LegalLinks";
@@ -20,49 +19,56 @@ import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
 const Footer = () => {
   const theme = useTheme();
 
-  const SanitizeFontWeight = ({ children }) => (
-    <Text style={{ fontWeight: "normal" }}>{children}</Text>
+  const SanitizeHeading = ({ title = "" }) => (
+    <Text b style={{ color: theme.palette.accents_3 }}>
+      {title}
+    </Text>
+  );
+  const SanitizeContent = ({ children }) => (
+    <Text style={{ fontWeight: "normal", color: theme.palette.background }}>
+      {children}
+    </Text>
   );
 
   const content = [
     <Description
-      title="Rechtliches"
+      title={<SanitizeHeading title="Rechtliches" />}
       content={
-        <SanitizeFontWeight>
+        <SanitizeContent>
           <LegalLinks />
-        </SanitizeFontWeight>
+        </SanitizeContent>
       }
     />,
     <Description
-      title="Kontakt"
+      title={<SanitizeHeading title="Kontakt" />}
       content={
-        <SanitizeFontWeight>
+        <SanitizeContent>
           <ContactLinks />
-        </SanitizeFontWeight>
+        </SanitizeContent>
       }
     />,
     <Description
-      title="Unternehmen"
+      title={<SanitizeHeading title="Unternehmen" />}
       content={
-        <SanitizeFontWeight>
+        <SanitizeContent>
           <CompanyLinks />
-        </SanitizeFontWeight>
+        </SanitizeContent>
       }
     />,
     <Description
-      title="Social"
+      title={<SanitizeHeading title="Social" />}
       content={
-        <SanitizeFontWeight>
+        <SanitizeContent>
           <SocialLinks />
-        </SanitizeFontWeight>
+        </SanitizeContent>
       }
     />,
     <Description
-      title="Vor Ort"
+      title={<SanitizeHeading title="Vor Ort" />}
       content={
-        <SanitizeFontWeight>
+        <SanitizeContent>
           <LocationLinks />
-        </SanitizeFontWeight>
+        </SanitizeContent>
       }
     />,
   ];
@@ -79,7 +85,13 @@ const Footer = () => {
             ))}
           </Grid.Container>
           <Divider />
-          <Description title={`© ${new Date().getFullYear()} QUIKK Software`} />
+          <Description
+            title={
+              <SanitizeHeading
+                title={`© ${new Date().getFullYear()} QUIKK Software`}
+              />
+            }
+          />
         </Container>
       </footer>
     </GeistProvider>
