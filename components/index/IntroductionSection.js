@@ -7,8 +7,10 @@ const IntroductionSection = ({
   title = "",
   content = "",
   revert = false,
+  alt = "",
 }) => {
-  const Img = () => <Image src={src} alt={title} />;
+  alt = alt.length > 0 ? alt : title;
+  const Img = () => <Image src={src} alt={alt} />;
 
   return (
     <>

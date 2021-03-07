@@ -15,17 +15,18 @@ const ServiceCard = ({ title, content, icon }) => {
   return (
     <Grid xs={24} sm={12} md={8}>
       <InternalLink href="/leistungen" style={{ width: "100%" }}>
-        <Card hoverable>
+        <Card hoverable style={{ borderColor: theme.palette.accents_2 }}>
           <Display
             caption={
               <Description
                 title={
                   <Text
-                    b
+                    h3
                     style={{
                       textAlign: "center",
                       width: "100%",
                       color: theme.palette.foreground,
+                      fontWeight: 700,
                     }}
                   >
                     {title}
@@ -36,7 +37,10 @@ const ServiceCard = ({ title, content, icon }) => {
                     <Divider
                       style={{ backgroundColor: theme.palette.success }}
                     />
-                    <Text style={{ fontWeight: "normal" }} type="secondary">
+                    <Text
+                      style={{ fontWeight: "normal", lineHeight: 1 }}
+                      type="secondary"
+                    >
                       {content}
                     </Text>
                   </>

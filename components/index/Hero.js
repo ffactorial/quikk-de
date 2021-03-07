@@ -31,7 +31,7 @@ const Hero = () => {
               <Grid xs={24} sm={24} md={12}>
                 <InternalLink href="/kontakt" style={{ width: "100%" }}>
                   <Button type="success" style={{ width: "100%" }}>
-                    Kontakt aufnehmen
+                    Anfragen
                   </Button>
                 </InternalLink>
               </Grid>

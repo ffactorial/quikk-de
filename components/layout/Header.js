@@ -16,8 +16,7 @@ const Header = () => {
     Home: "/",
     Leistungen: "/leistungen",
     Projekte: "/projekte",
-    Blog: "/blog",
-    "Über uns": "/team",
+    Team: "/team",
     Kontakt: "/kontakt",
   };
 

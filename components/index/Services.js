@@ -21,12 +21,12 @@ const Services = () => {
 
   const services = [
     {
-      title: "Softwareentwicklung",
-      content: "Maßgeschneiderte Software als Desktop- und Webanwendung.",
+      title: "Software",
+      content: "Maßgeschneiderte Lösungen als Desktop- und Webanwendung.",
       icon: <Code />,
     },
     {
-      title: "Fullstack Anwendungen",
+      title: "Fullstack",
       content: "Nutzeroberflächen gepaart mit einem ganzheitlichen Backend.",
       icon: <Server />,
     },
@@ -36,7 +36,7 @@ const Services = () => {
       icon: <Smartphone />,
     },
     {
-      title: "Programmierschnittstellen",
+      title: "APIs",
       content: "Schnittstellen für eine einfache Anbindung an Ihre Systeme.",
       icon: <GridIcon />,
     },
@@ -57,13 +57,13 @@ const Services = () => {
       icon: <Layout />,
     },
     {
-      title: "Suchmaschinenoptimierung",
+      title: "SEO",
       content:
         "Lassen Sie sich in den Weiten des World Wide Webs besser finden.",
       icon: <Search />,
     },
     {
-      title: "Agile Vorgehensweise",
+      title: "Agil nach Scrum",
       content:
         "Erste Ergebnisse liegen bereits nach einem 2-wöchigen Sprint vor.",
       icon: <FastForward />,
@@ -71,7 +71,13 @@ const Services = () => {
   ];
 
   return (
-    <section style={{ background: theme.palette.accents_1 }}>
+    <section
+      style={{
+        background: theme.palette.accents_1,
+        borderTop: `1px solid ${theme.palette.accents_2}`,
+        borderBottom: `1px solid ${theme.palette.accents_2}`,
+      }}
+    >
       <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
           <Grid xs={24}>

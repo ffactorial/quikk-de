@@ -50,7 +50,7 @@ const People = () => {
       <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP}>
           <Grid xs={24}>
-            <Title title="Über uns" />
+            <Title title="Unser Team" />
           </Grid>
           {people.map((person, i) => (
             <PeopleCard key={i} {...person} />

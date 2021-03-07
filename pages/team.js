@@ -5,7 +5,7 @@ import People from "../components/team/People";
 const team = () => {
   return (
     <>
-      <TitleAndDesc title="Über uns" desc="Über uns" />
+      <TitleAndDesc title="Team" desc="Unser Team" />
       <People />
     </>
   );
