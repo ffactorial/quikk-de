@@ -37,10 +37,7 @@ const ServiceCard = ({ title, content, icon }) => {
                     <Divider
                       style={{ backgroundColor: theme.palette.success }}
                     />
-                    <Text
-                      style={{ fontWeight: "normal", lineHeight: 1 }}
-                      type="secondary"
-                    >
+                    <Text style={{ fontWeight: "normal" }} type="secondary">
                       {content}
                     </Text>
                   </>
