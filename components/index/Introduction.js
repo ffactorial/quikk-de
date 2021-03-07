@@ -14,7 +14,7 @@ const Introduction = () => {
           <IntroductionSection
             src={joyce}
             title="Ihr Partner"
-            content="QUIKK Software aus Minden konzipiert und entwickelt individuelle Softwarelösungen und Webdesigns nach Ihren Vorstellungen. Unseren Fokus setzen wir dabei auf eine transparente Kommunikation und eine strukturierte Arbeitsweise, um Ihnen sauberes und wartbares Coding zu liefern."
+            content="QUIKK Software aus Minden konzipiert und entwickelt individuelle Softwarelösungen und Webdesigns nach Ihren Vorstellungen. Unseren Fokus setzen wir dabei auf agile Softwareentwicklung, eine transparente Kommunikation und eine strukturierte Arbeitsweise, um Ihnen sauberes und wartbares Coding zu liefern."
             alt="QUIKK Software Geschäftsführer und Ansprechpartner Joyce Rafflenbeul"
           />
           <IntroductionSection
@@ -25,9 +25,9 @@ const Introduction = () => {
             alt="QUIKK Software Standort: Minden (Ostwestfalen)"
           />
           <IntroductionSection
-            src="http://placekitten.com/1600/1200"
+            src={joyce}
             title="Mit Erfahrung"
-            content="Zunächst als Einzelunternehmer, seit Oktober 2020 im Team: Unser Geschäftsführer Joyce startet gemeinsam mit zwei weiteren studierten Informatikern voll durch und kann auf mehrjährige Erfahrung in der Web- und Anwendungsentwicklung zurückgreifen."
+            content="Zunächst als Einzelunternehmer, seit Oktober 2020 im Team: Unser Geschäftsführer Joyce startet gemeinsam mit zwei weiteren studierten Informatikern voll durch und kann auf mehrjährige Erfahrung in der Web- und Anwendungsentwicklung zurückgreifen. Wir sind Ihr Ansprechpartner für agile Softwareentwicklung und Webdesign."
             alt="QUIKK Software Team"
           />
         </Grid.Container>
