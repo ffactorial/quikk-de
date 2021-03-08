@@ -7,7 +7,6 @@ import { Spacing } from "./header/ResponsiveUtils";
 import DesktopNavBar from "./header/DesktopNavBar";
 import MobileNavBar from "./header/MobileNavBar";
 import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
-import quikk_logo from "../../assets/images/xd.svg";
 
 const Header = () => {
   const theme = useTheme();
@@ -36,7 +35,10 @@ const Header = () => {
           <Grid.Container gap={0} justify="space-between" alignItems="center">
             <Grid>
               <InternalLink href="/">
-                <Image alt="QUIKK Software" src={quikk_logo} />
+                {/* <Image alt="QUIKK Software" src={quikk_logo} /> */}
+                <Text h3 style={{ margin: 0, color: theme.palette.background }}>
+                  QUIKK
+                </Text>
               </InternalLink>
             </Grid>
             <Grid>

@@ -10,7 +10,7 @@ const index = () => {
   return (
     <>
       <TitleAndDesc
-        title="QUIKK Software Minden - Softwareentwicklung und Webdesign"
+        title="QUIKK Software - Softwareentwicklung & Webdesign aus Minden"
         desc="Entdecken Sie unsere digitalen Dienstleistungen und profitieren Sie von individueller Softwareentwicklung, mobilen Apps und einzigartigem Webdesign."
       />
       <Hero />

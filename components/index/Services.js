@@ -22,12 +22,14 @@ const Services = () => {
   const services = [
     {
       title: "Software",
-      content: "Maßgeschneiderte Lösungen als Desktop- und Webanwendung.",
+      content:
+        "Maßgeschneiderte Softwarelösungen als Desktop- und Webanwendung.",
       icon: <Code />,
     },
     {
       title: "Fullstack",
-      content: "Nutzeroberflächen gepaart mit einem ganzheitlichen Backend.",
+      content:
+        "Ganzheitliche Lösungen bestehend aus Nutzeroberfläche, Server und Datenbank.",
       icon: <Server />,
     },
     {
@@ -46,7 +48,7 @@ const Services = () => {
       icon: <LogIn />,
     },
     {
-      title: "Proof of Concepts",
+      title: "Prototyping",
       content:
         "Wir überprüfen und bestätigen die Durchführbarkeit Ihres Vorhabens.",
       icon: <Compass />,
@@ -63,7 +65,7 @@ const Services = () => {
       icon: <Search />,
     },
     {
-      title: "Agil nach Scrum",
+      title: "Agilität",
       content:
         "Erste Ergebnisse liegen bereits nach einem 2-wöchigen Sprint vor.",
       icon: <FastForward />,

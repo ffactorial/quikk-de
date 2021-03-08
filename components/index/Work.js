@@ -48,7 +48,7 @@ const Work = () => {
             <Title title="Unsere Arbeit" />
           </Grid>
           <Grid xs={24} md={16}>
-            <Note label="info">
+            <Note label={false}>
               Bei QUIKK Software arbeiten wir agil nach Scrum. So können wir
               qualitative Software entwickeln während wir gleichzeitig Kosten,
               Funktionsumfang und Deadlines einhalten und vollkommen transparent
