@@ -139,7 +139,7 @@ const leistungen = () => {
                   Desktopanwendungen werden mit Electron erstellt. Für mobile
                   Anwendungen kommt React Native zum Einsatz. Node.js und
                   Express.js erwecken unsere Server und REST Schnittstellen zum
-                  Leben. Für die Persistierung von Daten setzen wir ein.
+                  Leben. Für die Persistierung von Daten setzen wir MongoDB ein.
                 </Text>
               </Grid>
             </Grid.Container>
