@@ -16,6 +16,7 @@ const Header = () => {
     Leistungen: "/leistungen",
     Projekte: "/projekte",
     Team: "/team",
+    Karriere: "/karriere",
     Kontakt: "/kontakt",
   };
 
