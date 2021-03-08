@@ -10,23 +10,51 @@ import { Mail, Phone, Clock, MapPin } from "@geist-ui/react-icons";
 import React, { useState } from "react";
 import Container from "../components/layout/Container";
 import TitleAndDesc from "../components/meta/TitleAndDesc";
-import Title from "../components/misc/Title";
 import TitleWithDesc from "../components/misc/TitleWithDesc";
 import {
   ExternalLinkWithIcon,
   TextWithIcon,
 } from "../components/misc/WithIconHelper";
 import { MEDIUM_GAP, XTRA_LARGE_GAP } from "../src/constants";
+import axios from "axios";
 
 const kontakt = () => {
   const [toasts, setToast] = useToasts();
   const [name, setName] = useState("");
-  const [emailAddress, setEmailAddress] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const onSubmitHandler = (e) => {
+  const resetInput = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
-    // setToast({ text: "Ihre Nachricht wurde erfolgreich gesendet." });
+    setLoading(true);
+    try {
+      const {
+        data: { mailInfo },
+      } = await axios.post("/api/quikkmailer", {
+        name,
+        email,
+        message,
+      });
+      const rejected = mailInfo.rejected.length > 0;
+
+      const text = rejected
+        ? "Ihre Nachricht konnte nicht gesendet werden."
+        : "Ihre Nachricht wurde erfolgreich gesendet.";
+      const type = rejected ? "error" : "default";
+
+      setToast({ text, type });
+    } catch (error) {
+      setToast({ text: "Es ist ein Fehler aufgetreten.", type: "error" });
+    }
+    resetInput();
+    setLoading(false);
   };
 
   const ContactText = ({ children }) => (
@@ -62,34 +90,6 @@ const kontakt = () => {
     </Grid>
   );
 
-  const ContactForm = () => (
-    <Grid xs={24}>
-      <form style={{ width: "100%" }} onSubmit={onSubmitHandler}>
-        <Grid.Container gap={MEDIUM_GAP}>
-          <Grid xs={24}>
-            <Input placeholder="Ihr Name" width="100%" type="text" required />
-          </Grid>
-          <Grid xs={24}>
-            <Input
-              placeholder="Ihre E-Mail Adresse"
-              width="100%"
-              type="email"
-              required
-            />
-          </Grid>
-          <Grid xs={24}>
-            <Textarea placeholder="Ihr Anliegen" width="100%" required />
-          </Grid>
-          <Grid xs={24}>
-            <Button type="success" style={{ width: "100%" }} htmlType="submit">
-              Absenden
-            </Button>
-          </Grid>
-        </Grid.Container>
-      </form>
-    </Grid>
-  );
-
   const title = "Kontakt";
   const desc = " Wie und wann Sie uns am besten erreichen können.";
 
@@ -100,7 +100,51 @@ const kontakt = () => {
         <Grid.Container gap={XTRA_LARGE_GAP}>
           <TitleWithDesc {...{ title, desc }} />
           <ContactInformation />
-          <ContactForm />
+          <Grid xs={24}>
+            <form style={{ width: "100%" }} onSubmit={onSubmitHandler}>
+              <Grid.Container gap={MEDIUM_GAP}>
+                <Grid xs={24}>
+                  <Input
+                    placeholder="Ihr Name"
+                    width="100%"
+                    type="text"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </Grid>
+                <Grid xs={24}>
+                  <Input
+                    placeholder="Ihre E-Mail Adresse"
+                    width="100%"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Grid>
+                <Grid xs={24}>
+                  <Textarea
+                    placeholder="Ihre Nachricht an uns"
+                    width="100%"
+                    required
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
+                </Grid>
+                <Grid xs={24}>
+                  <Button
+                    type="success"
+                    style={{ width: "100%" }}
+                    htmlType="submit"
+                    loading={loading}
+                  >
+                    Absenden
+                  </Button>
+                </Grid>
+              </Grid.Container>
+            </form>
+          </Grid>
         </Grid.Container>
       </Container>
     </>

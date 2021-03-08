@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quikk.de/sitemap.xml

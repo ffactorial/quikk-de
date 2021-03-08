@@ -59,7 +59,11 @@ const Work = () => {
           <Grid xs={24} md={16}>
             <Collapse.Group>
               {work.map(({ title, content, src }, i) => (
-                <Collapse title={`${i + 1}. ${title}`} initialVisible={i === 0}>
+                <Collapse
+                  title={`${i + 1}. ${title}`}
+                  initialVisible={i === 0}
+                  key={i}
+                >
                   <Grid.Container
                     gap={XTRA_LARGE_GAP}
                     alignItems="center"

@@ -59,14 +59,14 @@ const leistungen = () => {
     "devicon-typescript-plain colored",
     "devicon-nodejs-plain-wordmark colored",
     "devicon-react-original-wordmark colored",
-    "devicon-redux-original colored",
     "devicon-html5-plain-wordmark colored",
     "devicon-css3-plain-wordmark colored",
+    "devicon-redux-original colored",
     "devicon-electron-original-wordmark colored",
     "devicon-express-original-wordmark colored",
     "devicon-mongodb-plain-wordmark colored",
+    "devicon-npm-original-wordmark colored",
     "devicon-flutter-plain colored",
-    "devicon-mocha-plain colored",
   ];
 
   const title = "Leistungen";
@@ -98,11 +98,16 @@ const leistungen = () => {
                               gap={MEDIUM_GAP}
                               alignItems="center"
                             >
-                              <Grid xs={6} sm={4} md={2} justify="center">
+                              <Grid xs={4} md={2} justify="center">
                                 <CheckCircle />
                               </Grid>
-                              <Grid xs={18} sm={20} md={22} justify="center">
-                                {_}
+                              <Grid xs={20} md={22} justify="center">
+                                <Text
+                                  type="secondary"
+                                  style={{ width: "100%", textAlign: "left" }}
+                                >
+                                  {_}
+                                </Text>
                               </Grid>
                             </Grid.Container>
                           </Card>
@@ -136,16 +141,17 @@ const leistungen = () => {
           </Grid>
           {technologies.map((_, i) => (
             <Grid
-              xs={12}
-              sm={6}
-              md={4}
-              lg={2}
-              key={i}
               alignItems="center"
               justify="center"
+              direction="row"
+              key={i}
+              xs={12}
+              sm={8}
+              md={6}
+              lg={4}
             >
               <i
-                style={{ fontSize: "4em", textAlign: "center" }}
+                style={{ fontSize: "3em", textAlign: "center" }}
                 className={_}
               />
             </Grid>
