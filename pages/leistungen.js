@@ -1,4 +1,4 @@
-import { Card, Grid, Text } from "@geist-ui/react";
+import { Card, Grid, Text, useMediaQuery } from "@geist-ui/react";
 import { CheckCircle } from "@geist-ui/react-icons";
 import React from "react";
 import Container from "../components/layout/Container";
@@ -121,23 +121,28 @@ const leistungen = () => {
           </Grid>
           <Grid xs={24} direction="column">
             <Title title="Technologien" centered={false} />
-            <Text type="secondary" style={{ marginBottom: 0 }}>
-              Eine Vielzahl unserer Lösungen bedient sich an aktuellen
-              Technologien aus dem JavaScript Ökosystem. JavaScript war
-              ursprünglich als reine Skriptsprache für das Web konzipiert, ist
-              heutzutage aber deutlich umfangreicher und vielfältiger
-              einsetzbar. Wir verwenden JavaScript (ES6+) und TypeScript im
-              Front- und Backend unserer Anwendungen.
-            </Text>
-            <Text type="secondary" style={{ marginBottom: 0 }}>
-              Nutzeroberflächen und Webdesigns realisieren wir mit HTML, CSS und
-              React.js. Unsere Webanwendungen verwenden Next.js,
-              Desktopanwendungen werden mit Electron erstellt. Für mobile
-              Anwendungen kommt React Native zum Einsatz. Node.js und Express.js
-              erwecken unsere Server und REST Schnittstellen zum Leben. Für die
-              Persistierung von Daten setzen wir üblicherweise MongoDB als
-              Datenbanktechnologie unserer Wahl ein.
-            </Text>
+            <Grid.Container gap={useMediaQuery("xs") ? 0 : XTRA_LARGE_GAP}>
+              <Grid xs={24} md={12}>
+                <Text type="secondary" style={{ marginBottom: 0 }}>
+                  Eine Vielzahl unserer Lösungen bedient sich an aktuellen
+                  Technologien aus dem JavaScript Ökosystem. JavaScript war
+                  ursprünglich als reine Skriptsprache für das Web konzipiert,
+                  ist heutzutage aber deutlich umfangreicher und vielfältiger
+                  einsetzbar. Wir verwenden JavaScript (ES6+) und TypeScript im
+                  Front- und Backend unserer Anwendungen.
+                </Text>
+              </Grid>
+              <Grid xs={24} md={12}>
+                <Text type="secondary" style={{ marginBottom: 0 }}>
+                  Nutzeroberflächen und Webdesigns realisieren wir mit HTML, CSS
+                  und React.js. Unsere Webanwendungen verwenden Next.js,
+                  Desktopanwendungen werden mit Electron erstellt. Für mobile
+                  Anwendungen kommt React Native zum Einsatz. Node.js und
+                  Express.js erwecken unsere Server und REST Schnittstellen zum
+                  Leben. Für die Persistierung von Daten setzen wir ein.
+                </Text>
+              </Grid>
+            </Grid.Container>
           </Grid>
           {technologies.map((_, i) => (
             <Grid
