@@ -4,6 +4,7 @@ import Footer from "../components/layout/Footer";
 import DefaultSEO from "../components/meta/DefaultSEO";
 import { QUIKK_light } from "../styles/themes";
 import "../styles/globals.css";
+import "../node_modules/devicon/devicon.min.css";
 import useHeaderHeight from "../components/hooks/useHeaderHeight";
 import React, { useEffect, useState } from "react";
 

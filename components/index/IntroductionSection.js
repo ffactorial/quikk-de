@@ -1,4 +1,4 @@
-import { Grid, Image, Text } from "@geist-ui/react";
+import { Card, Grid, Image, Text } from "@geist-ui/react";
 import React from "react";
 import Title from "../misc/Title";
 

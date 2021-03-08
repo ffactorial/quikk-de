@@ -1,4 +1,3 @@
-import { Divider } from "@geist-ui/react";
 import React from "react";
 import Hero from "../components/index/Hero";
 import Introduction from "../components/index/Introduction";
@@ -14,7 +13,6 @@ const index = () => {
         desc="Entdecken Sie unsere digitalen Dienstleistungen und profitieren Sie von individueller Softwareentwicklung, mobilen Apps und einzigartigem Webdesign."
       />
       <Hero />
-      <Divider style={{ margin: 0 }} />
       <Introduction />
       <Services />
       <Work />

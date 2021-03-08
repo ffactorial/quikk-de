@@ -8,6 +8,7 @@ import {
   useTheme,
 } from "@geist-ui/react";
 import React from "react";
+import { MEDIUM_GAP } from "../../src/constants";
 import InternalLink from "../misc/InternalLink";
 
 const ServiceCard = ({ title, content, icon }) => {
@@ -15,7 +16,7 @@ const ServiceCard = ({ title, content, icon }) => {
   return (
     <Grid xs={24} sm={12} md={8}>
       <InternalLink href="/leistungen" style={{ width: "100%" }}>
-        <Card hoverable style={{ borderColor: theme.palette.accents_2 }}>
+        <Card hoverable shadow style={{ borderColor: theme.palette.accents_2 }}>
           <Display
             caption={
               <Description
@@ -36,6 +37,7 @@ const ServiceCard = ({ title, content, icon }) => {
                   <>
                     <Divider
                       style={{ backgroundColor: theme.palette.success }}
+                      volume={2}
                     />
                     <Text style={{ fontWeight: "normal" }} type="secondary">
                       {content}

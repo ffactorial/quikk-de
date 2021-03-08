@@ -3,7 +3,7 @@ import React from "react";
 import Container from "../components/layout/Container";
 import CarreerCard from "../components/karriere/CarrerCard";
 import TitleAndDesc from "../components/meta/TitleAndDesc";
-import Title from "../components/misc/Title";
+import TitleWithDesc from "../components/misc/TitleWithDesc";
 import { XTRA_LARGE_GAP } from "../src/constants";
 import ExternalLink from "../components/misc/ExternalLink";
 
@@ -23,19 +23,16 @@ const karriere = () => {
     },
   ];
 
+  const title = "Karriere";
+  const desc =
+    "Wir freuen uns über motivierte Personen, die sich unserem Team anschließen wollen. Nichts für Dich dabei? Wir warten gespannt auf Deine Initiativbewerbung.";
+
   return (
     <>
-      <TitleAndDesc title="Karriere" desc="Stellenangebote" />
+      <TitleAndDesc {...{ title, desc }} />
       <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP}>
-          <Grid xs={24} direction="column">
-            <Title title="Karriere" centered={false} />
-            <Text type="secondary" style={{ marginBottom: 0 }}>
-              Wir freuen uns über motivierte Mitarbeiter, die sich unserem Team
-              anschließen wollen. Nichts für Dich dabei? Wir warten gespannt auf
-              Deine Initiativbewerbung.
-            </Text>
-          </Grid>
+          <TitleWithDesc {...{ title, desc }} />
           <Grid xs={24}>
             <Note label="Bewerbungen">
               Schickst Du am besten an{" "}

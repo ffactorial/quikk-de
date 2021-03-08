@@ -10,7 +10,6 @@ const LegalLinks = () => {
         <InternalLink href="/datenschutzerklaerung">
           Datenschutzerklärung
         </InternalLink>,
-        <InternalLink href="/cookies">Cookies verwalten</InternalLink>,
       ]}
     />
   );

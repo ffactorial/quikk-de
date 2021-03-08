@@ -24,8 +24,10 @@ const Hero = () => {
             </Text>
             <Text type="secondary" style={{ marginTop: 0 }}>
               Wir setzen Ihr Vorhaben in die Tat um. Egal ob professionelle
-              Webauftritte, klassische Softwarelösungen, mobile Apps oder Ihr
-              eigenes, individuelles Anliegen.
+              Webauftritte,{" "}
+              <span style={{ whiteSpace: "nowrap" }}>E-Commerce</span>,
+              klassische Softwarelösungen, mobile Apps oder Ihr eigenes,
+              individuelles Anliegen.
             </Text>
             <Grid.Container gap={MEDIUM_GAP}>
               <Grid xs={24} sm={24} md={12}>

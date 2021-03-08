@@ -14,7 +14,6 @@ const Header = () => {
   const pathnames = {
     Home: "/",
     Leistungen: "/leistungen",
-    Projekte: "/projekte",
     Team: "/team",
     Karriere: "/karriere",
     Kontakt: "/kontakt",

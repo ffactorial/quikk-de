@@ -11,6 +11,7 @@ import React, { useState } from "react";
 import Container from "../components/layout/Container";
 import TitleAndDesc from "../components/meta/TitleAndDesc";
 import Title from "../components/misc/Title";
+import TitleWithDesc from "../components/misc/TitleWithDesc";
 import {
   ExternalLinkWithIcon,
   TextWithIcon,
@@ -80,11 +81,7 @@ const kontakt = () => {
             <Textarea placeholder="Ihr Anliegen" width="100%" required />
           </Grid>
           <Grid xs={24}>
-            <Button
-              type="secondary"
-              style={{ width: "100%" }}
-              htmlType="submit"
-            >
+            <Button type="success" style={{ width: "100%" }} htmlType="submit">
               Absenden
             </Button>
           </Grid>
@@ -93,17 +90,15 @@ const kontakt = () => {
     </Grid>
   );
 
+  const title = "Kontakt";
+  const desc = " Wie und wann Sie uns am besten erreichen können.";
+
   return (
     <>
-      <TitleAndDesc title="Kontakt" desc="Kontaktmöglichkeiten" />
+      <TitleAndDesc {...{ title, desc }} />
       <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP}>
-          <Grid xs={24} direction="column">
-            <Title title="Kontakt" centered={false} />
-            <Text type="secondary" style={{ marginBottom: 0 }}>
-              Wie und wann Sie uns am besten erreichen können.
-            </Text>
-          </Grid>
+          <TitleWithDesc {...{ title, desc }} />
           <ContactInformation />
           <ContactForm />
         </Grid.Container>

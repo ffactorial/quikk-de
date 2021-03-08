@@ -10,6 +10,7 @@
   "dependencies": {
     "@geist-ui/react": "^2.1.3",
     "@geist-ui/react-icons": "^1.0.1",
+    "devicon": "^2.10.1",
     "next": "10.0.7",
     "next-images": "^1.7.0",
     "react": "17.0.1",

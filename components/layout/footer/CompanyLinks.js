@@ -8,7 +8,6 @@ const CompanyLinks = () => {
       content={[
         <InternalLink href="/team">Team</InternalLink>,
         <InternalLink href="/leistungen">Leistungen</InternalLink>,
-        <InternalLink href="/projekte">Projekte</InternalLink>,
         <InternalLink href="/karriere">Karriere</InternalLink>,
       ]}
     />
