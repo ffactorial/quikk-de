@@ -6,8 +6,7 @@ import joyce from "../assets/images/joyce.jpg";
 import christian from "../assets/images/christian.png";
 import Container from "../components/layout/Container";
 import { XTRA_LARGE_GAP } from "../src/constants";
-import { Grid, Text } from "@geist-ui/react";
-import Title from "../components/misc/Title";
+import { Grid } from "@geist-ui/react";
 import TitleWithDesc from "../components/misc/TitleWithDesc";
 
 const team = () => {

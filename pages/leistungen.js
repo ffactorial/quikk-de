@@ -121,7 +121,11 @@ const leistungen = () => {
           </Grid>
           <Grid xs={24} direction="column">
             <Title title="Technologien" centered={false} />
-            <Grid.Container gap={useMediaQuery("xs") ? 0 : XTRA_LARGE_GAP}>
+            <Grid.Container
+              gap={
+                useMediaQuery("xs") || useMediaQuery("sm") ? 0 : XTRA_LARGE_GAP
+              }
+            >
               <Grid xs={24} md={12}>
                 <Text type="secondary" style={{ marginBottom: 0 }}>
                   Eine Vielzahl unserer Lösungen bedient sich an aktuellen

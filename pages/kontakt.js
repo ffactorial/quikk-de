@@ -91,7 +91,7 @@ const kontakt = () => {
   );
 
   const title = "Kontakt";
-  const desc = " Wie und wann Sie uns am besten erreichen können.";
+  const desc = "Wie und wann Sie uns am besten erreichen können.";
 
   return (
     <>

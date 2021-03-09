@@ -94,9 +94,7 @@ const ServiceCard = ({
                   {desc.length > 0 && (
                     <>
                       <Spacer />
-                      <Text style={{ textAlign: "start" }} type="secondary">
-                        {desc}
-                      </Text>
+                      <Text style={{ textAlign: "start" }}>{desc}</Text>
                     </>
                   )}
                 </>

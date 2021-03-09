@@ -4,8 +4,6 @@ import { ExternalLinkWithIcon } from "../../misc/WithIconHelper";
 import Links from "./Links";
 
 const SocialLinks = () => {
-  const prod = false;
-
   return (
     <Links
       content={[
@@ -16,19 +14,19 @@ const SocialLinks = () => {
           LinkedIn
         </ExternalLinkWithIcon>,
         <ExternalLinkWithIcon
-          href={prod ? "https://github.com/quikk-software" : "#"}
+          href="https://github.com/quikk-software"
           icon={<Github />}
         >
           GitHub
         </ExternalLinkWithIcon>,
         <ExternalLinkWithIcon
-          href={prod ? "https://twitter.com/quikk_software" : "#"}
+          href="https://twitter.com/quikk_software"
           icon={<Twitter />}
         >
           Twitter
         </ExternalLinkWithIcon>,
         <ExternalLinkWithIcon
-          href={prod ? "https://instagram.com/quikk_software" : "#"}
+          href="https://instagram.com/quikk_software"
           icon={<Instagram />}
         >
           Instagram
