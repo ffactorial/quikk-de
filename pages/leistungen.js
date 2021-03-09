@@ -5,10 +5,13 @@ import Container from "../components/layout/Container";
 import TitleAndDesc from "../components/meta/TitleAndDesc";
 import Title from "../components/misc/Title";
 import TitleWithDesc from "../components/misc/TitleWithDesc";
-import { TextWithIcon } from "../components/misc/WithIconHelper";
 import { MEDIUM_GAP, XTRA_LARGE_GAP } from "../src/constants";
 
 const leistungen = () => {
+  const isMobilePhone = useMediaQuery("xs");
+  const isTablet = useMediaQuery("sm");
+  const isMobile = isMobilePhone || isTablet;
+
   const services = [
     {
       title: "Software",
@@ -121,11 +124,7 @@ const leistungen = () => {
           </Grid>
           <Grid xs={24} direction="column">
             <Title title="Technologien" centered={false} />
-            <Grid.Container
-              gap={
-                useMediaQuery("xs") || useMediaQuery("sm") ? 0 : XTRA_LARGE_GAP
-              }
-            >
+            <Grid.Container gap={isMobile ? 0 : XTRA_LARGE_GAP}>
               <Grid xs={24} md={12}>
                 <Text type="secondary" style={{ marginBottom: 0 }}>
                   Eine Vielzahl unserer Lösungen bedient sich an aktuellen
