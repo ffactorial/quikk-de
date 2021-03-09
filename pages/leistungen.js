@@ -132,17 +132,19 @@ const leistungen = () => {
                   ursprünglich als reine Skriptsprache für das Web konzipiert,
                   ist heutzutage aber deutlich umfangreicher und vielfältiger
                   einsetzbar. Wir verwenden JavaScript (ES6+) und TypeScript im
-                  Front- und Backend unserer Anwendungen.
+                  Front- und Backend unserer Anwendungen und können so auf
+                  aktuelle Tools und Frameworks zurückgreifen.
                 </Text>
               </Grid>
               <Grid xs={24} md={12}>
                 <Text type="secondary" style={{ marginBottom: 0 }}>
                   Nutzeroberflächen und Webdesigns realisieren wir mit HTML, CSS
-                  und React.js. Unsere Webanwendungen verwenden Next.js,
+                  und React. Für unsere Webanwendungen verwenden wir Next.js,
                   Desktopanwendungen werden mit Electron erstellt. Für mobile
-                  Anwendungen kommt React Native zum Einsatz. Node.js und
-                  Express.js erwecken unsere Server und REST Schnittstellen zum
-                  Leben. Für die Persistierung von Daten setzen wir MongoDB ein.
+                  Anwendungen kommen React Native oder Flutter zum Einsatz.
+                  Node.js und Express.js erwecken unsere Server und REST
+                  Schnittstellen zum Leben. Für die Persistierung von Daten
+                  setzen wir MongoDB ein.
                 </Text>
               </Grid>
             </Grid.Container>

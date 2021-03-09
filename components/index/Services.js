@@ -28,8 +28,7 @@ const Services = () => {
     },
     {
       title: "Fullstack",
-      content:
-        "Ganzheitliche Lösungen bestehend aus Nutzeroberfläche, Server und Datenbank.",
+      content: "Anwendungen mit Nutzeroberfläche, Server und Datenbank.",
       icon: <Server />,
     },
     {

@@ -35,7 +35,7 @@ const karriere = () => {
           <TitleWithDesc {...{ title, desc }} />
           <Grid xs={24}>
             <Note label="Bewerbungen">
-              Lust auf Softwareentwicklung, Kundenkontakt und
+              Hast Du Lust auf Softwareentwicklung, Kundenkontakt und
               Startup-Atmosphäre? Schick uns Deine Bewerbungsunterlagen an{" "}
               <ExternalLink href="mailto:info@quikk.de">
                 info@quikk.de

@@ -88,7 +88,7 @@ const Footer = () => {
           <Description
             title={
               <SanitizeHeading
-                title={`© ${new Date().getFullYear()} QUIKK Software`}
+                title={`© 2020-${new Date().getFullYear()} QUIKK Software`}
               />
             }
           />

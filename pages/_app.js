@@ -7,6 +7,7 @@ import "../styles/globals.css";
 import "../node_modules/devicon/devicon.min.css";
 import useHeaderHeight from "../components/hooks/useHeaderHeight";
 import React, { useEffect, useState } from "react";
+import ContactRef from "../components/misc/ContactRef";
 
 const _app = ({ Component, pageProps }) => {
   const [headerHeight, setHeaderHeight] = useState("0px");
@@ -26,6 +27,7 @@ const _app = ({ Component, pageProps }) => {
       <main style={{ paddingTop: `${headerHeight}` }}>
         <Component {...pageProps} />
       </main>
+      <ContactRef />
       <Footer />
     </GeistProvider>
   );

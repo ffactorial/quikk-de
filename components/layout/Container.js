@@ -20,22 +20,22 @@ const Container = ({ children, spacing = false, x = 1, ...props }) => {
         }
         @media (min-width: 576px) {
           .quikkontainer {
-            max-width: 540px !important;
+            max-width: calc(540px - ${paddingInPx * 2}px) !important;
           }
         }
         @media (min-width: 768px) {
           .quikkontainer {
-            max-width: 720px !important;
+            max-width: calc(720px - ${paddingInPx * 2}px) !important;
           }
         }
         @media (min-width: 992px) {
           .quikkontainer {
-            max-width: 960px !important;
+            max-width: calc(960px - ${paddingInPx * 2}px) !important;
           }
         }
         @media (min-width: 1200px) {
           .quikkontainer {
-            max-width: 1140px !important;
+            max-width: calc(1140px - ${paddingInPx * 2}px) !important;
           }
         }
       `}</style>
