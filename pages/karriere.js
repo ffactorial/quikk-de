@@ -36,7 +36,7 @@ const karriere = () => {
           <Grid xs={24}>
             <Note label="Bewerbungen">
               Lust auf Softwareentwicklung, Kundenkontakt und
-              Startup-Atmosphäre? Schicke Deine Bewerbungsunterlagen an{" "}
+              Startup-Atmosphäre? Schick uns Deine Bewerbungsunterlagen an{" "}
               <ExternalLink href="mailto:info@quikk.de">
                 info@quikk.de
               </ExternalLink>
