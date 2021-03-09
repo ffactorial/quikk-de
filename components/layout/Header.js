@@ -1,15 +1,25 @@
-import { GeistProvider, Grid, Image, Text, useTheme } from "@geist-ui/react";
+import {
+  GeistProvider,
+  Grid,
+  Spacer,
+  Text,
+  useMediaQuery,
+  useTheme,
+} from "@geist-ui/react";
 import React from "react";
-import { MEDIUM_GAP } from "../../src/constants";
 import InternalLink from "../misc/InternalLink";
 import Container from "./Container";
-import { Spacing } from "./header/ResponsiveUtils";
 import DesktopNavBar from "./header/DesktopNavBar";
 import MobileNavBar from "./header/MobileNavBar";
 import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
+import { SMALL_GAP } from "../../src/constants";
 
 const Header = () => {
   const theme = useTheme();
+  const xs = useMediaQuery("xs");
+  const sm = useMediaQuery("sm");
+
+  const isMobile = xs || sm;
 
   const pathnames = {
     Home: "/",
@@ -30,24 +40,26 @@ const Header = () => {
           zIndex: 99,
         }}
       >
-        <Spacing />
+        <Spacer y={SMALL_GAP} />
         <Container>
           <Grid.Container gap={0} justify="space-between" alignItems="center">
             <Grid>
               <InternalLink href="/">
-                {/* <Image alt="QUIKK Software" src={quikk_logo} /> */}
                 <Text h3 style={{ margin: 0, color: theme.palette.background }}>
                   QUIKK
                 </Text>
               </InternalLink>
             </Grid>
             <Grid>
-              <DesktopNavBar pathnames={pathnames} />
-              <MobileNavBar pathnames={pathnames} />
+              {isMobile ? (
+                <MobileNavBar pathnames={pathnames} />
+              ) : (
+                <DesktopNavBar pathnames={pathnames} />
+              )}
             </Grid>
           </Grid.Container>
         </Container>
-        <Spacing />
+        <Spacer y={SMALL_GAP} />
       </header>
     </GeistProvider>
   );

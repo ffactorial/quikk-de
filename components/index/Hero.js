@@ -39,7 +39,7 @@ const Hero = () => {
               </Grid>
               <Grid xs={24} sm={24} md={12}>
                 <InternalLink href="/leistungen" style={{ width: "100%" }}>
-                  <Button type="secondary" style={{ width: "100%" }} ghost>
+                  <Button type="secondary" style={{ width: "100%" }}>
                     Unsere Leistungen
                   </Button>
                 </InternalLink>

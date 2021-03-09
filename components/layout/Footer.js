@@ -7,7 +7,7 @@ import {
   useTheme,
 } from "@geist-ui/react";
 import React from "react";
-import { LARGE_GAP } from "../../src/constants";
+import { MEDIUM_GAP } from "../../src/constants";
 import LocationLinks from "./footer/LocationLinks";
 import Container from "./Container";
 import LegalLinks from "./footer/LegalLinks";
@@ -77,7 +77,7 @@ const Footer = () => {
     <GeistProvider themes={[QUIKK_light, QUIKK_dark]} themeType="QUIKK_dark">
       <footer style={{ background: theme.palette.foreground }}>
         <Container spacing>
-          <Grid.Container gap={LARGE_GAP}>
+          <Grid.Container gap={MEDIUM_GAP}>
             {content.map((_, i) => (
               <Grid key={i} xs={12} sm={12} md={24 / content.length}>
                 {_}

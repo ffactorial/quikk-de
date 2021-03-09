@@ -45,7 +45,7 @@ const ContactRef = () => {
             </Grid>
             <Grid xs={24} sm={24} md alignItems="center" justify="center">
               <InternalLink href="/kontakt">
-                <Button type="secondary">Zum Kontaktformular</Button>
+                <Button type="success">Zum Kontaktformular</Button>
               </InternalLink>
             </Grid>
           </Grid.Container>
