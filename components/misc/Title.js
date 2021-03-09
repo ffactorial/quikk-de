@@ -7,7 +7,7 @@ const Title = ({ title = "", centered = true }) => {
       h2
       style={{
         width: "100%",
-        textAlign: centered ? "center" : "unset",
+        textAlign: centered ? "center" : "left",
         fontWeight: 700,
         lineHeight: 0.8,
         margin: 0,

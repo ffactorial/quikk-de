@@ -67,7 +67,7 @@ const ServiceCard = ({
 
   return (
     <Grid xs={24} sm={12} md={8}>
-      <Card>
+      <Card style={{ height: "100%" }}>
         <Display
           caption={
             <Description
@@ -94,7 +94,7 @@ const ServiceCard = ({
                   {desc.length > 0 && (
                     <>
                       <Spacer />
-                      <Text style={{ textAlign: "start" }}>{desc}</Text>
+                      <Text style={{ textAlign: "left" }}>{desc}</Text>
                     </>
                   )}
                 </>

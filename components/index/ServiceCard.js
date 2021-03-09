@@ -15,8 +15,15 @@ const ServiceCard = ({ title, content, icon }) => {
   const theme = useTheme();
   return (
     <Grid xs={24} sm={12} md={8}>
-      <InternalLink href="/leistungen" style={{ width: "100%" }}>
-        <Card hoverable shadow style={{ borderColor: theme.palette.accents_2 }}>
+      <InternalLink
+        href="/leistungen"
+        style={{ width: "100%", height: "100%" }}
+      >
+        <Card
+          hoverable
+          shadow
+          style={{ borderColor: theme.palette.accents_2, height: "100%" }}
+        >
           <Display
             caption={
               <Description

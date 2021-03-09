@@ -1,4 +1,4 @@
-import { Grid, Note, Text } from "@geist-ui/react";
+import { Grid, Note } from "@geist-ui/react";
 import React from "react";
 import Container from "../components/layout/Container";
 import CarreerCard from "../components/karriere/CarrerCard";
@@ -11,13 +11,13 @@ const karriere = () => {
   const jobs = [
     {
       title: "Praktikum",
-      subtitle: "im Bereich Softwareentwicklung",
+      subtitle: "in der Softwareentwicklung",
       content:
         "Du hast bereits erste Erfahrungen in der IT sammeln können, oder sogar Vorkenntnisse in einer oder mehreren Programmiersprachen? Wir freuen uns, Dir Einblicke in unseren Node.js Technologie Stack und unsere Arbeitsweise zu geben.",
     },
     {
       title: "Schulpraktikum",
-      subtitle: "im Bereich Softwareentwicklung",
+      subtitle: "in der Softwareentwicklung",
       content:
         "Informatik fasziniert Dich? Wir zeigen Dir, wie wir an Kundenprojekten arbeiten und bringen Dich mit der Entwicklung von Software in Kontakt: Bei uns lernst Du JavaScript Grundlagen und entwickelst eigene Anwendungen.",
     },
@@ -25,7 +25,7 @@ const karriere = () => {
 
   const title = "Karriere";
   const desc =
-    "Wir freuen uns über motivierte Personen, die sich unserem Team anschließen wollen. Nichts für Dich dabei? Wir warten gespannt auf Deine Initiativbewerbung.";
+    "Wir freuen uns über motivierte Personen, die sich unserem Team anschließen wollen. Nichts für Dich dabei? Schick uns Deine Initiativbewerbung!";
 
   return (
     <>

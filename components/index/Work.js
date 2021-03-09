@@ -1,4 +1,4 @@
-import { Card, Collapse, Grid, Image, Text } from "@geist-ui/react";
+import { Card, Collapse, Grid, Image, Note, Text } from "@geist-ui/react";
 import React from "react";
 import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";
@@ -48,13 +48,13 @@ const Work = () => {
             <Title title="Unsere Arbeit" />
           </Grid>
           <Grid xs={24} md={16}>
-            <Card>
+            <Note label="Smart">
               Bei QUIKK Software arbeiten wir agil nach Scrum. So können wir
               qualitative Software entwickeln während wir gleichzeitig Kosten,
               Funktionsumfang und Deadlines einhalten und vollkommen transparent
               kommunizieren. Die folgenden vier Abschnitte innerhalb eines
               Kundenprojektes sind uns dabei besonders wichtig.
-            </Card>
+            </Note>
           </Grid>
           <Grid xs={24} md={16}>
             <Collapse.Group>

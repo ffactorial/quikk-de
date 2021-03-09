@@ -106,7 +106,6 @@ const leistungen = () => {
                               </Grid>
                               <Grid xs={20} md={22} justify="center">
                                 <Text
-                                  type="secondary"
                                   style={{ width: "100%", textAlign: "left" }}
                                 >
                                   {_}

@@ -73,7 +73,7 @@ const kontakt = () => {
         </ContactText>
         <ContactText>
           <ExternalLinkWithIcon href="tel:+4915233902667" icon={<Phone />}>
-            +49 1523 390 2667
+            +49 (0) 1523 390 2667
           </ExternalLinkWithIcon>
         </ContactText>
         <ContactText>
