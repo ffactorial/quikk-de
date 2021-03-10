@@ -6,7 +6,7 @@ const TitleAndDesc = ({ title = "", desc = "" }) => {
   const router = useRouter();
   const isHome = router.pathname === "/";
 
-  title = isHome ? title : `${title} - QUIKK`;
+  title = isHome ? title : `${title} - QUIKK Software`;
 
   return (
     <Head>

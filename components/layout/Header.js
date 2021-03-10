@@ -1,11 +1,4 @@
-import {
-  GeistProvider,
-  Grid,
-  Spacer,
-  Text,
-  useMediaQuery,
-  useTheme,
-} from "@geist-ui/react";
+import { GeistProvider, Grid, Spacer, Text, useTheme } from "@geist-ui/react";
 import React from "react";
 import InternalLink from "../misc/InternalLink";
 import Container from "./Container";
@@ -13,18 +6,18 @@ import DesktopNavBar from "./header/DesktopNavBar";
 import MobileNavBar from "./header/MobileNavBar";
 import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
 import { SMALL_GAP } from "../../src/constants";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Header = () => {
   const theme = useTheme();
-  const xs = useMediaQuery("xs");
-  const sm = useMediaQuery("sm");
 
-  const isMobile = xs || sm;
+  const isMobile = useIsMobile();
 
   const pathnames = {
     Home: "/",
     Leistungen: "/leistungen",
     Team: "/team",
+    Blog: "/blog",
     Karriere: "/karriere",
     Kontakt: "/kontakt",
   };

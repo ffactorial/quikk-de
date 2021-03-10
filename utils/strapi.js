@@ -14,6 +14,7 @@ const fetch = async (path) => {
 };
 
 const sortByDisplayAsc = (a, b) => a.display - b.display;
+const sortByUpdatedAsc = (a, b) => a.updatedAt - b.updatedAt;
 
 export const getColleagues = async () => {
   const colleagues = await fetch("/colleagues");
@@ -23,4 +24,14 @@ export const getColleagues = async () => {
 export const getJobs = async () => {
   const jobs = await fetch("/jobs");
   return jobs.sort(sortByDisplayAsc);
+};
+
+export const getArticles = async () => {
+  const articles = await fetch("/articles");
+  return articles.sort(sortByUpdatedAsc);
+};
+
+export const getArticleBySlug = async (slug) => {
+  const articles = await fetch(`/articles?slug=${slug}`);
+  return articles[0];
 };

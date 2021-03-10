@@ -1,5 +1,6 @@
-import { Grid, Text, useMediaQuery } from "@geist-ui/react";
+import { Grid, Text } from "@geist-ui/react";
 import React from "react";
+import useIsMobile from "../components/hooks/useIsMobile";
 import Container from "../components/layout/Container";
 import ServiceFeatureCard from "../components/leistungen/ServiceFeatureCard";
 import TitleAndDesc from "../components/meta/TitleAndDesc";
@@ -8,9 +9,7 @@ import TitleWithDesc from "../components/misc/TitleWithDesc";
 import { XTRA_LARGE_GAP } from "../src/constants";
 
 const leistungen = () => {
-  const isMobilePhone = useMediaQuery("xs");
-  const isTablet = useMediaQuery("sm");
-  const isMobile = isMobilePhone || isTablet;
+  const isMobile = useIsMobile();
 
   const services = [
     {
