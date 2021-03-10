@@ -4,10 +4,21 @@ import { useRouter } from "next/router";
 
 const DesktopNavBar = ({ pathnames }) => {
   const router = useRouter();
+
+  const pathnameValues = Object.values(pathnames);
+
+  if (router.pathname !== "/") {
+    pathnameValues.splice(pathnameValues.indexOf("/"), 1);
+  }
+
+  const currentActivePathname = pathnameValues.find((pathname) =>
+    router.pathname.startsWith(pathname)
+  );
+
   return (
     <Tabs
       initialValue={router.pathname}
-      value={router.pathname}
+      value={currentActivePathname}
       onChange={(pathname) => router.push(pathname)}
       hideDivider
     >

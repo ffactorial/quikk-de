@@ -9,7 +9,7 @@ import InternalLink from "../../components/misc/InternalLink";
 import TitleWithDesc from "../../components/misc/TitleWithDesc";
 import { TextWithIcon } from "../../components/misc/WithIconHelper";
 import { MEDIUM_GAP, XTRA_LARGE_GAP } from "../../src/constants";
-import { getReadingTimeInMinutes } from "../../utils/blog";
+import { getPreviewText, getReadingTimeInMinutes } from "../../utils/blog";
 import { getArticleBySlug, getArticles } from "../../utils/strapi";
 
 const Article = ({
@@ -23,7 +23,7 @@ const Article = ({
 
   return (
     <>
-      <TitleAndDesc {...{ title }} />
+      <TitleAndDesc {...{ title, desc: getPreviewText(content, 150) }} />
       <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP} justify="center">
           <Grid {...breakpoints}>

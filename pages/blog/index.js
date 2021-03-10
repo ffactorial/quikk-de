@@ -10,15 +10,15 @@ import { getArticles } from "../../utils/strapi";
 const Articles = ({ articles }) => {
   const title = "Blog";
   const desc =
-    "Hier zeigen wir, was uns aktuell beschäftigt und stellen Ihnen relevante Technologien vor.";
+    "Hier zeigen wir, was uns aktuell beschäftigt, und stellen Ihnen relevante Technologien vor.";
   return (
     <>
       <TitleAndDesc {...{ title, desc }} />
       <Container spacing>
         <Grid.Container gap={XTRA_LARGE_GAP}>
           <TitleWithDesc {...{ title, desc }} />
-          {articles.map((article) => (
-            <Article {...article} />
+          {articles.map((article, i) => (
+            <Article {...article} key={i} />
           ))}
         </Grid.Container>
       </Container>
