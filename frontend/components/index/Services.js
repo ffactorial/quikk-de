@@ -43,7 +43,8 @@ const Services = () => {
     },
     {
       title: "Integration",
-      content: "Anwendungen automatisiert verbinden: Zeit und Nerven sparen.",
+      content:
+        "Automatisiertes Verbinden von Anwendungen spart Zeit und Nerven.",
       icon: <LogIn />,
     },
     {

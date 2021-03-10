@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colleagues",
+  "info": {
+    "name": "Colleague",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "homepage": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "email"
+    },
+    "display": {
+      "type": "integer"
+    }
+  }
+}

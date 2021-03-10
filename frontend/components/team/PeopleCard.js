@@ -16,12 +16,12 @@ import ExternalLink from "../misc/ExternalLink";
 const ServiceCard = ({
   name = "",
   mail = "",
-  title = "",
+  position = "",
   linkedin = "",
   github = "",
   homepage = "",
   avatar = "",
-  desc = "",
+  bio = "",
 }) => {
   const theme = useTheme();
 
@@ -87,14 +87,14 @@ const ServiceCard = ({
               content={
                 <>
                   <Text style={{ fontWeight: "normal" }} type="secondary">
-                    {title}
+                    {position}
                   </Text>
                   <Spacer />
                   <Socials />
-                  {desc.length > 0 && (
+                  {bio.length > 0 && (
                     <>
                       <Spacer />
-                      <Text style={{ textAlign: "left" }}>{desc}</Text>
+                      <Text style={{ textAlign: "left" }}>{bio}</Text>
                     </>
                   )}
                 </>
@@ -106,7 +106,7 @@ const ServiceCard = ({
             src={avatar}
             isSquare
             size="large"
-            alt={`${name} ist ${title} bei QUIKK Software`}
+            alt={`${name} ist ${position} bei QUIKK Software`}
           />
         </Display>
       </Card>
