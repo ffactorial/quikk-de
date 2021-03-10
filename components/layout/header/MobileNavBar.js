@@ -33,6 +33,8 @@ const MobileNavBar = ({ pathnames }) => {
       placement="bottomEnd"
       portalClassName="mobile-menu"
       hideArrow
+      enterDelay={0}
+      leaveDelay={0}
     >
       <Button
         auto

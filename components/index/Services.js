@@ -38,12 +38,12 @@ const Services = () => {
     },
     {
       title: "APIs",
-      content: "Schnittstellen für eine einfache Anbindung an Ihre Systeme.",
+      content: "Schnittstellen für eine einfache Kommunikation Ihrer Systeme.",
       icon: <GridIcon />,
     },
     {
       title: "Integration",
-      content: "Anwendungen automatisiert verbinden und Zeit sparen.",
+      content: "Anwendungen automatisiert verbinden: Zeit und Nerven sparen.",
       icon: <LogIn />,
     },
     {
