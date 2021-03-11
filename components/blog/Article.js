@@ -15,7 +15,7 @@ const Article = ({
   content,
   image: { url },
   author: { name, avatar, position },
-  updatedAt,
+  published_at,
 }) => {
   const isMobile = useIsMobile();
 
@@ -30,7 +30,7 @@ const Article = ({
             <Grid xs={24} sm={24} md={16} direction="column">
               <Grid.Container>
                 <TextWithIcon icon={<Calendar />}>
-                  {new Date(updatedAt).toLocaleDateString()}
+                  {new Date(published_at).toLocaleDateString()}
                 </TextWithIcon>
                 <Spacer />
                 <TextWithIcon icon={<Clock />}>

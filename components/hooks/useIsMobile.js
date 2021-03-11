@@ -4,7 +4,8 @@ const useIsMobile = () => {
   const xs = useMediaQuery("xs");
   const sm = useMediaQuery("sm");
   const isMobile = xs || sm;
-  return isMobile;
+
+  return typeof document !== "undefined" ? isMobile : true;
 };
 
 export default useIsMobile;

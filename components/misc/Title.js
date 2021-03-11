@@ -12,6 +12,10 @@ const Title = ({ title = "", centered = true, small = false }) => {
         fontWeight: small ? 600 : 700,
         lineHeight: 1,
         margin: 0,
+        overflowWrap: "break-word",
+        wordWrap: "break-word",
+        wordBreak: "break-word",
+        hyphens: "auto",
       }}
     >
       {small ? title : title.toUpperCase()}

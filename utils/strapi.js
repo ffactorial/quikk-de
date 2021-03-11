@@ -14,7 +14,8 @@ const fetch = async (path) => {
 };
 
 const sortByDisplayAsc = (a, b) => a.display - b.display;
-const sortByUpdatedAsc = (a, b) => a.updatedAt - b.updatedAt;
+const sortByPublishedAt = (a, b) =>
+  String(b.published_at).localeCompare(String(a.published_at));
 
 export const getColleagues = async () => {
   const colleagues = await fetch("/colleagues");
@@ -28,7 +29,7 @@ export const getJobs = async () => {
 
 export const getArticles = async () => {
   const articles = await fetch("/articles");
-  return articles.sort(sortByUpdatedAsc);
+  return articles.sort(sortByPublishedAt);
 };
 
 export const getArticleBySlug = async (slug) => {

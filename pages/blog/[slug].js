@@ -17,7 +17,7 @@ const Article = ({
   content,
   image: { url },
   author: { name, avatar, position },
-  updatedAt,
+  published_at,
 }) => {
   return (
     <>
@@ -50,7 +50,7 @@ const Article = ({
               <Grid>
                 <Grid.Container>
                   <TextWithIcon icon={<Calendar />}>
-                    {new Date(updatedAt).toLocaleDateString()}
+                    {new Date(published_at).toLocaleDateString()}
                   </TextWithIcon>
                   <Spacer />
                   <TextWithIcon icon={<Clock />}>
