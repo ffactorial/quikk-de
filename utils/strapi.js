@@ -7,9 +7,13 @@ export const getStrapiURL = (path) => {
   }${path}`;
 };
 
+/**
+ * 5 min timeout for heroku free dyno, axios expectes ms
+ */
+
 const fetch = async (path) => {
   const requestUrl = getStrapiURL(path);
-  const { data } = await axios.get(requestUrl);
+  const { data } = await axios.get(requestUrl, { timeout: 1000 * 60 * 5 });
   return data;
 };
 

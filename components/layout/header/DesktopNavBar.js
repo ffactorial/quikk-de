@@ -18,7 +18,7 @@ const DesktopNavBar = ({ pathnames }) => {
   return (
     <Tabs
       initialValue={router.pathname}
-      value={currentActivePathname}
+      value={currentActivePathname ?? router.pathname}
       onChange={(pathname) => router.push(pathname)}
       hideDivider
     >

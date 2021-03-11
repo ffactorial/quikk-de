@@ -142,7 +142,7 @@ const kontakt = () => {
                     onChange={() => setAccepted(!accepted)}
                   >
                     Ich akzeptiere die{" "}
-                    <InternalLink href="/datenschutzerklaerung">
+                    <InternalLink color href="/datenschutzerklaerung">
                       Datenschutzerklärung
                     </InternalLink>
                     .

@@ -102,6 +102,11 @@ const Article = ({
 
 export default Article;
 
+/**
+ * see https://github.com/vercel/next.js/blob/canary/examples/cms-strapi/pages/posts/%5Bslug%5D.js
+ * for further information on how to render blog posts properly
+ */
+
 export async function getStaticProps(ctx) {
   const {
     params: { slug },
@@ -118,7 +123,7 @@ export async function getStaticProps(ctx) {
     };
   } else {
     return {
-      revalidate: 1,
+      // revalidate: 1,
       props: {
         ...article,
       },
