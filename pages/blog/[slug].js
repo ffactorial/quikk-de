@@ -13,12 +13,19 @@ import { getPreviewText, getReadingTimeInMinutes } from "../../utils/blog";
 import { getArticleBySlug, getArticles } from "../../utils/strapi";
 
 const Article = ({
-  title,
-  content,
-  image: { url },
-  author: { name, avatar, position },
-  published_at,
+  title = "",
+  content = "",
+  image,
+  author,
+  published_at = "",
 }) => {
+  const { url } = image ?? { url: "" };
+  const { name, avatar, position } = author ?? {
+    name: "",
+    avatar: "",
+    position: "",
+  };
+
   return (
     <>
       <TitleAndDesc {...{ title, desc: getPreviewText(content, 150) }} />

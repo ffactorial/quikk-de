@@ -10,14 +10,21 @@ import TitleWithDesc from "../misc/TitleWithDesc";
 import { TextWithIcon } from "../misc/WithIconHelper";
 
 const Article = ({
-  title,
-  slug,
-  content,
-  image: { url },
-  author: { name, avatar, position },
-  published_at,
+  title = "",
+  content = "",
+  image,
+  author,
+  published_at = "",
+  slug = "",
 }) => {
   const isMobile = useIsMobile();
+
+  const { url } = image ?? { url: "" };
+  const { name, avatar, position } = author ?? {
+    name: "",
+    avatar: "",
+    position: "",
+  };
 
   return (
     <Grid xs={24}>
