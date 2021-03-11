@@ -1,12 +1,13 @@
-import { Card, Grid, Text } from "@geist-ui/react";
+import { Card, Grid, Text, useTheme } from "@geist-ui/react";
 import { CheckCircle } from "@geist-ui/react-icons";
 import React from "react";
 import { MEDIUM_GAP } from "../../src/constants";
 
 const ServiceFeatureCard = ({ title, features, subtitle }) => {
+  const theme = useTheme();
   return (
     <Grid xs={24}>
-      <Card type="success">
+      <Card style={{ background: theme.palette.accents_1 }}>
         <Grid.Container gap={MEDIUM_GAP}>
           <Grid xs={24} direction="column">
             <Text h3 style={{ margin: 0, lineHeight: 0.8 }}>

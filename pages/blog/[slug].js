@@ -8,7 +8,7 @@ import AlignedUser from "../../components/misc/AlignedUser";
 import InternalLink from "../../components/misc/InternalLink";
 import TitleWithDesc from "../../components/misc/TitleWithDesc";
 import { TextWithIcon } from "../../components/misc/WithIconHelper";
-import { MEDIUM_GAP, XTRA_LARGE_GAP } from "../../src/constants";
+import { breakpoints, MEDIUM_GAP, XTRA_LARGE_GAP } from "../../src/constants";
 import { getPreviewText, getReadingTimeInMinutes } from "../../utils/blog";
 import { getArticleBySlug, getArticles } from "../../utils/strapi";
 
@@ -19,8 +19,6 @@ const Article = ({
   author: { name, avatar, position },
   updatedAt,
 }) => {
-  const breakpoints = { xs: 24, sm: 24, md: 20, lg: 16 };
-
   return (
     <>
       <TitleAndDesc {...{ title, desc: getPreviewText(content, 150) }} />
@@ -39,7 +37,11 @@ const Article = ({
           </Grid>
           <TitleWithDesc {...{ title }} breakpoints={breakpoints} />
           <Grid {...breakpoints}>
-            <Grid.Container justify="space-between" gap={MEDIUM_GAP}>
+            <Grid.Container
+              justify="space-between"
+              alignItems="center"
+              gap={MEDIUM_GAP}
+            >
               <Grid>
                 <InternalLink href="/team">
                   <AlignedUser {...{ avatar, name, position }} />

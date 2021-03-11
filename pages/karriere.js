@@ -29,8 +29,8 @@ const karriere = ({ jobs }) => {
               .
             </Note>
           </Grid>
-          {jobs.map((job) => (
-            <CarreerCard {...job} />
+          {jobs.map((job, i) => (
+            <CarreerCard key={i} {...job} />
           ))}
         </Grid.Container>
       </Container>

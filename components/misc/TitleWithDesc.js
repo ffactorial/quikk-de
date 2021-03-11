@@ -12,9 +12,11 @@ const TitleWithDesc = ({
   const Content = () => (
     <>
       <Title title={title} centered={false} small={small} />
-      <Text type="secondary" style={{ marginBottom: 0 }}>
-        {desc}
-      </Text>
+      {desc.length > 0 && (
+        <Text type="secondary" style={{ marginBottom: 0 }}>
+          {desc}
+        </Text>
+      )}
     </>
   );
 

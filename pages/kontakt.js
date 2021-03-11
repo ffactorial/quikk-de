@@ -1,5 +1,6 @@
 import {
   Button,
+  Checkbox,
   Grid,
   Input,
   Text,
@@ -15,8 +16,9 @@ import {
   ExternalLinkWithIcon,
   TextWithIcon,
 } from "../components/misc/WithIconHelper";
-import { MEDIUM_GAP, XTRA_LARGE_GAP } from "../src/constants";
+import { breakpoints, MEDIUM_GAP, XTRA_LARGE_GAP } from "../src/constants";
 import axios from "axios";
+import InternalLink from "../components/misc/InternalLink";
 
 const kontakt = () => {
   const [toasts, setToast] = useToasts();
@@ -24,6 +26,7 @@ const kontakt = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [accepted, setAccepted] = useState(false);
 
   const resetInput = () => {
     setName("");
@@ -64,7 +67,7 @@ const kontakt = () => {
   );
 
   const ContactInformation = () => (
-    <Grid xs={24}>
+    <Grid {...breakpoints}>
       <Grid.Container gap={MEDIUM_GAP}>
         <ContactText>
           <ExternalLinkWithIcon href="mailto:info@quikk.de" icon={<Mail />}>
@@ -97,10 +100,10 @@ const kontakt = () => {
     <>
       <TitleAndDesc {...{ title, desc }} />
       <Container spacing>
-        <Grid.Container gap={XTRA_LARGE_GAP}>
-          <TitleWithDesc {...{ title, desc }} />
+        <Grid.Container gap={XTRA_LARGE_GAP} justify="center">
+          <TitleWithDesc {...{ title, desc }} breakpoints={breakpoints} />
           <ContactInformation />
-          <Grid xs={24}>
+          <Grid {...breakpoints}>
             <form style={{ width: "100%" }} onSubmit={onSubmitHandler}>
               <Grid.Container gap={MEDIUM_GAP}>
                 <Grid xs={24}>
@@ -133,7 +136,21 @@ const kontakt = () => {
                   />
                 </Grid>
                 <Grid xs={24}>
+                  <Checkbox
+                    value={String(accepted)}
+                    initialChecked={accepted}
+                    onChange={() => setAccepted(!accepted)}
+                  >
+                    Ich akzeptiere die{" "}
+                    <InternalLink href="/datenschutzerklaerung">
+                      Datenschutzerklärung
+                    </InternalLink>
+                    .
+                  </Checkbox>
+                </Grid>
+                <Grid xs={24}>
                   <Button
+                    disabled={!accepted}
                     type="success"
                     style={{ width: "100%" }}
                     htmlType="submit"
