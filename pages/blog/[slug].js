@@ -1,4 +1,4 @@
-import { Breadcrumbs, Grid, Image, Spacer } from "@geist-ui/react";
+import { Breadcrumbs, Grid, Image, Loading, Spacer } from "@geist-ui/react";
 import { Calendar, Clock } from "@geist-ui/react-icons";
 import React from "react";
 import ReactMarkdown from "react-markdown";
@@ -26,7 +26,28 @@ const Article = ({
     position: "",
   };
 
-  return (
+  const notFound =
+    !title ||
+    !content ||
+    !image ||
+    !author ||
+    !published_at ||
+    !url ||
+    !name ||
+    !avatar ||
+    !position;
+
+  return notFound ? (
+    <Grid.Container
+      alignItems="center"
+      justify="center"
+      style={{ height: "50vh" }}
+    >
+      <Grid xs={24} alignItems="center" justify="center">
+        <Loading />
+      </Grid>
+    </Grid.Container>
+  ) : (
     <>
       <TitleAndDesc {...{ title, desc: getPreviewText(content, 150) }} />
       <Container spacing>
@@ -87,12 +108,22 @@ export async function getStaticProps(ctx) {
   } = ctx;
 
   const article = await getArticleBySlug(slug);
-  return {
-    revalidate: 1,
-    props: {
-      ...article,
-    },
-  };
+
+  if (!article) {
+    return {
+      redirect: {
+        destination: `/blog`,
+        statusCode: 302,
+      },
+    };
+  } else {
+    return {
+      revalidate: 1,
+      props: {
+        ...article,
+      },
+    };
+  }
 }
 
 export async function getStaticPaths() {
@@ -105,6 +136,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }

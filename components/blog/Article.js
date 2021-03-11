@@ -28,8 +28,12 @@ const Article = ({
 
   return (
     <Grid xs={24}>
-      <InternalLink href={`/blog/${slug}`}>
-        <Card hoverable>
+      <InternalLink
+        href={`/blog/${slug}`}
+        style={{ width: "100%" }}
+        width="100%"
+      >
+        <Card hoverable style={{ width: "100%" }} width="100%">
           <Grid.Container
             direction={isMobile ? "column-reverse" : "row"}
             gap={XTRA_LARGE_GAP}
