@@ -8,6 +8,7 @@ import AlignedUser from "../../components/misc/AlignedUser";
 import InternalLink from "../../components/misc/InternalLink";
 import TitleWithDesc from "../../components/misc/TitleWithDesc";
 import { TextWithIcon } from "../../components/misc/WithIconHelper";
+import LoadingScreen from "../../screens/LoadingScreen";
 import { breakpoints, MEDIUM_GAP, XTRA_LARGE_GAP } from "../../src/constants";
 import { getPreviewText, getReadingTimeInMinutes } from "../../utils/blog";
 import { getArticleBySlug, getArticles } from "../../utils/strapi";
@@ -38,15 +39,7 @@ const Article = ({
     !position;
 
   return notFound ? (
-    <Grid.Container
-      alignItems="center"
-      justify="center"
-      style={{ height: "50vh" }}
-    >
-      <Grid xs={24} alignItems="center" justify="center">
-        <Loading />
-      </Grid>
-    </Grid.Container>
+    <LoadingScreen />
   ) : (
     <>
       <TitleAndDesc {...{ title, desc: getPreviewText(content, 150) }} />

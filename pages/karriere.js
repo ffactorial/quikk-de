@@ -23,7 +23,7 @@ const karriere = ({ jobs }) => {
             <Note label="Bewerbungen">
               Hast Du Lust auf Softwareentwicklung, Kundenkontakt und
               Startup-Atmosphäre? Schick uns Deine Bewerbungsunterlagen an{" "}
-              <ExternalLink href="mailto:info@quikk.de">
+              <ExternalLink href="mailto:info@quikk.de" color>
                 info@quikk.de
               </ExternalLink>
               .
