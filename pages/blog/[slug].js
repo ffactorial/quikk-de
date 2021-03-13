@@ -116,7 +116,7 @@ export async function getStaticProps(ctx) {
     };
   } else {
     return {
-      // revalidate: 1,
+      revalidate: 1,
       props: {
         ...article,
       },
