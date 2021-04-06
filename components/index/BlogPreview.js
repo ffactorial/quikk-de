@@ -17,7 +17,7 @@ const BlogPreview = ({ articles }) => {
 				))}
 				<Grid xs={24} sm={24} md alignItems="center" justify="center">
 					<InternalLink href="/blog">
-						<Button type="success">Zum Blog</Button>
+						<Button type="secondary">Zum Blog</Button>
 					</InternalLink>
 				</Grid>
 			</Grid.Container>
