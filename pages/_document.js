@@ -21,7 +21,7 @@ class _document extends Document {
 		return (
 			<Html>
 				<Head />
-				<body>
+				<body className="loading">
 					<Main />
 					<NextScript />
 				</body>

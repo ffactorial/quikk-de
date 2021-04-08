@@ -17,6 +17,7 @@ const _app = ({ Component, pageProps }) => {
 		const height = useHeaderHeight();
 		main?.setAttribute("style", `padding-top: ${height}`);
 		setHeaderHeight(`${useHeaderHeight()}px`);
+		document?.body?.classList?.remove("loading");
 	}, []);
 
 	return (

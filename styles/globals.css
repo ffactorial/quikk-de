@@ -17,7 +17,6 @@ header .tabs .content {
 	top: 62px !important;
 }
 
-a:hover {
-	background-color: unset !important;
-	color: unset !important;
+.loading {
+	opacity: 0;
 }

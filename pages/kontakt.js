@@ -72,28 +72,22 @@ const kontakt = () => {
 		<Grid {...breakpoints}>
 			<Grid.Container gap={MEDIUM_GAP}>
 				<ContactText>
-					<ExternalLinkWithIcon
-						href="mailto:info@quikk.de"
-						icon={<Mail color={theme.palette.success} />}
-					>
+					<ExternalLinkWithIcon href="mailto:info@quikk.de" icon={<Mail />}>
 						info@quikk.de
 					</ExternalLinkWithIcon>
 				</ContactText>
 				<ContactText>
-					<ExternalLinkWithIcon
-						href="tel:+4915233902667"
-						icon={<Phone color={theme.palette.success} />}
-					>
+					<ExternalLinkWithIcon href="tel:+4915233902667" icon={<Phone />}>
 						+49 (0) 1523 390 2667
 					</ExternalLinkWithIcon>
 				</ContactText>
 				<ContactText>
-					<TextWithIcon icon={<Clock color={theme.palette.success} />}>
+					<TextWithIcon icon={<Clock />}>
 						Mo. - Fr. von 09:00 - 17:00
 					</TextWithIcon>
 				</ContactText>
 				<ContactText>
-					<TextWithIcon icon={<MapPin color={theme.palette.success} />}>
+					<TextWithIcon icon={<MapPin />}>
 						Hahler Straße 285, 32427 Minden
 					</TextWithIcon>
 				</ContactText>

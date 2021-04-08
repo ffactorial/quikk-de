@@ -41,15 +41,9 @@ const ServiceCard = ({ title, content, icon }) => {
 									</Text>
 								}
 								content={
-									<>
-										<Divider
-											style={{ backgroundColor: theme.palette.success }}
-											volume={3}
-										/>
-										<Text style={{ fontWeight: "normal" }} type="secondary">
-											{content}
-										</Text>
-									</>
+									<Text style={{ fontWeight: "normal" }} type="secondary">
+										{content}
+									</Text>
 								}
 								style={{ textAlign: "center" }}
 							/>

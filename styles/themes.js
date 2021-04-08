@@ -5,13 +5,16 @@ const expressiveness = {
 	linkHoverStyle: "none",
 };
 
+const dark = "#21242D";
+const light = "#FFFFFF";
+const success = "#FF584F";
+
 export const QUIKK_light = Themes.createFromLight({
 	type: "QUIKK_light",
 	palette: {
-		foreground: "#222D36",
-		background: "#fefefe",
-		success: "#fd921b",
-		link: "#fd921b",
+		foreground: dark,
+		background: light,
+		success,
 	},
 	expressiveness,
 });
@@ -19,9 +22,9 @@ export const QUIKK_light = Themes.createFromLight({
 export const QUIKK_dark = Themes.createFromDark({
 	type: "QUIKK_dark",
 	palette: {
-		foreground: "#fefefe",
-		background: "#222D36",
-		link: "#fd921b",
+		foreground: light,
+		background: dark,
+		success,
 	},
 	expressiveness,
 });

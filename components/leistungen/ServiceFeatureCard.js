@@ -20,7 +20,7 @@ const ServiceFeatureCard = ({ title, features, subtitle }) => {
 							{/* <Card> */}
 							<Grid.Container gap={MEDIUM_GAP} alignItems="center">
 								<Grid xs={4} md={2} justify="center">
-									<CheckCircle color={theme.palette.success} />
+									<CheckCircle />
 								</Grid>
 								<Grid xs={20} md={22} justify="center">
 									<Text style={{ width: "100%", textAlign: "left" }}>{_}</Text>
