@@ -8,6 +8,7 @@ import "../node_modules/devicon/devicon.min.css";
 import useHeaderHeight from "../components/hooks/useHeaderHeight";
 import React, { useEffect, useState } from "react";
 import ContactRef from "../components/misc/ContactRef";
+import { LOADING_CLASS_NAME } from "../src/constants";
 
 const _app = ({ Component, pageProps }) => {
 	const [headerHeight, setHeaderHeight] = useState("0px");
@@ -17,7 +18,7 @@ const _app = ({ Component, pageProps }) => {
 		const height = useHeaderHeight();
 		main?.setAttribute("style", `padding-top: ${height}`);
 		setHeaderHeight(`${useHeaderHeight()}px`);
-		document?.body?.classList?.remove("loading");
+		document?.body?.classList?.remove(LOADING_CLASS_NAME);
 	}, []);
 
 	return (

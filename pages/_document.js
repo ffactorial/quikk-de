@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { CssBaseline } from "@geist-ui/react";
+import { LOADING_CLASS_NAME } from "../src/constants";
 
 class _document extends Document {
 	static async getInitialProps(ctx) {
@@ -21,7 +22,7 @@ class _document extends Document {
 		return (
 			<Html>
 				<Head />
-				<body className="loading">
+				<body className={LOADING_CLASS_NAME}>
 					<Main />
 					<NextScript />
 				</body>
