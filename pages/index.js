@@ -11,7 +11,7 @@ const index = ({ articles }) => {
 	return (
 		<>
 			<TitleAndDesc
-				title="QUIKK Software Softwareentwicklung/Webdesign Minden"
+				title="QUIKK Software: Softwareentwicklung und Webdesign"
 				desc="QUIKK Software aus Minden bietet individuelle Softwareentwicklung, E-Commerce-Lösungen, mobile Apps und einzigartiges Webdesign an. Jetzt anfragen."
 			/>
 			<Hero />
