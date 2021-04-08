@@ -10,13 +10,11 @@ const AlignedUser = ({ avatar, name, position }) => {
 	}, []);
 
 	const style = { padding: 0 };
+	const altText = `${name}: ${position} bei QUIKK Software Minden`;
 
-	return isMobile ? (
-		<User src={avatar} name={name} style={style} />
-	) : (
-		<User src={avatar} name={name} style={style}>
-			{position}
-		</User>
+	return React.cloneElement(
+		<User src={avatar} name={name} style={style} altText={altText} />,
+		{ children: isMobile ? null : position },
 	);
 };
 
