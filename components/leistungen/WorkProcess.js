@@ -67,23 +67,13 @@ const WorkProcess = ({ heading = true }) => {
 							direction="column"
 							justify="flex-start"
 							alignItems="flex-start"
-							style={{ textAlign: "start" }}
 						>
 							<h3
 								style={{
 									width: "100%",
-									// textAlign: isMobile ? "start" : "center",
 								}}
 							>
-								{_.icon}
-							</h3>
-							<h3
-								style={{
-									width: "100%",
-									// textAlign: isMobile ? "start" : "center",
-								}}
-							>
-								{_.title}
+								{React.cloneElement(_.icon, { size: "1rem" })} {_.title}
 							</h3>
 							<ul>
 								{_.content.map((__, i) => (

@@ -12,6 +12,17 @@ const Hero = ({ title = "", subtitle = "", src = hero }) => {
 	const router = useRouter();
 	const isMobile = useIsMobile();
 	const { isSubPath } = useIsSubpage();
+
+	const BackButton = () => (
+		<Button
+			type="secondary"
+			onClick={() => router.back()}
+			style={{ width: isMobile ? "100%" : null }}
+		>
+			Zurück
+		</Button>
+	);
+
 	return (
 		<section
 			style={{
@@ -25,6 +36,11 @@ const Hero = ({ title = "", subtitle = "", src = hero }) => {
 		>
 			<Container spacing>
 				<Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
+					{isSubPath && isMobile && (
+						<Grid xs={24}>
+							<BackButton />
+						</Grid>
+					)}
 					<Grid xs={24} sm={24} md={14} direction="column">
 						<Text h1 style={{ lineHeight: 1 }}>
 							{title}
@@ -32,11 +48,7 @@ const Hero = ({ title = "", subtitle = "", src = hero }) => {
 						<Text type="secondary" style={{ marginTop: 0 }}>
 							{subtitle}
 						</Text>
-						{isSubPath && (
-							<Button type="secondary" onClick={() => router.back()}>
-								Zurück
-							</Button>
-						)}
+						{isSubPath && !isMobile && <BackButton />}
 					</Grid>
 					<Grid xs={24} sm={24} md={10} justify="center">
 						<Image
