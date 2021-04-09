@@ -6,6 +6,7 @@ import Work from "../components/index/Work";
 import TitleAndDesc from "../components/meta/TitleAndDesc";
 import { getArticles } from "../utils/strapi";
 import BlogPreview from "../components/index/BlogPreview";
+import WorkProcess from "../components/leistungen/WorkProcess";
 
 const index = ({ articles }) => {
 	return (
@@ -18,6 +19,7 @@ const index = ({ articles }) => {
 			<Introduction />
 			<Services />
 			<Work />
+			<WorkProcess heading={false} />
 			<BlogPreview {...{ articles }} />
 		</>
 	);

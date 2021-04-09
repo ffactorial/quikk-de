@@ -10,12 +10,7 @@ import useIsMobile from "../hooks/useIsMobile";
 
 const Header = () => {
 	const theme = useTheme();
-
-	const tmpIsMobile = useIsMobile();
-	const [isMobile, setIsMobile] = useState(false);
-	useEffect(() => {
-		setIsMobile(tmpIsMobile);
-	}, []);
+	const isMobile = useIsMobile();
 
 	const pathnames = {
 		Home: "/",

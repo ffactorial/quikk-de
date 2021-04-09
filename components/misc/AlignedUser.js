@@ -3,11 +3,7 @@ import React, { useEffect, useState } from "react";
 import useIsMobile from "../hooks/useIsMobile";
 
 const AlignedUser = ({ avatar, name, position }) => {
-	const tmpIsMobile = useIsMobile();
-	const [isMobile, setIsMobile] = useState(false);
-	useEffect(() => {
-		setIsMobile(tmpIsMobile);
-	}, []);
+	const isMobile = useIsMobile();
 
 	const style = { padding: 0 };
 	const altText = `${name}: ${position} bei QUIKK Software Minden`;

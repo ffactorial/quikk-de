@@ -2,14 +2,13 @@ import {
 	Card,
 	Description,
 	Display,
-	Divider,
 	Grid,
 	Text,
 	useTheme,
 } from "@geist-ui/react";
 import React from "react";
-import { MEDIUM_GAP } from "../../src/constants";
 import InternalLink from "../misc/InternalLink";
+import Divider from "../misc/Divider";
 
 const ServiceCard = ({ title, content, icon }) => {
 	const theme = useTheme();
@@ -41,11 +40,18 @@ const ServiceCard = ({ title, content, icon }) => {
 									</Text>
 								}
 								content={
-									<Text style={{ fontWeight: "normal" }} type="secondary">
-										{content}
-									</Text>
+									<>
+										<Divider />
+										<Text style={{ fontWeight: "normal" }} type="secondary">
+											{content}
+										</Text>
+									</>
 								}
-								style={{ textAlign: "center" }}
+								style={{
+									textAlign: "center",
+									justifyContent: "center",
+									alignItems: "center",
+								}}
 							/>
 						}
 					>

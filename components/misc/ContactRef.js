@@ -2,6 +2,7 @@ import { Button, Grid, Text, useTheme } from "@geist-ui/react";
 import { useRouter } from "next/router";
 import React from "react";
 import { XTRA_LARGE_GAP } from "../../src/constants";
+import useIsMobile from "../hooks/useIsMobile";
 import Container from "../layout/Container";
 import InternalLink from "./InternalLink";
 import Title from "./Title";
@@ -9,7 +10,7 @@ import Title from "./Title";
 const ContactRef = () => {
 	const router = useRouter();
 	const theme = useTheme();
-
+	const isMobile = useIsMobile();
 	const excludePathnames = ["/kontakt", "/impressum", "/datenschutzerklaerung"];
 	const displayContactRef = excludePathnames.every(
 		(pathname) => pathname !== router.pathname,
@@ -44,8 +45,16 @@ const ContactRef = () => {
 							</Text>
 						</Grid>
 						<Grid xs={24} sm={24} md alignItems="center" justify="center">
-							<InternalLink href="/kontakt">
-								<Button type="success">Zum Kontaktformular</Button>
+							<InternalLink
+								href="/kontakt"
+								style={{ width: isMobile ? "100%" : null }}
+							>
+								<Button
+									type="success"
+									style={{ width: isMobile ? "100%" : null }}
+								>
+									Zum Kontaktformular
+								</Button>
 							</InternalLink>
 						</Grid>
 					</Grid.Container>

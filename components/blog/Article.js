@@ -17,11 +17,7 @@ const Article = ({
 	published_at = "",
 	slug = "",
 }) => {
-	const tmpIsMobile = useIsMobile();
-	const [isMobile, setIsMobile] = useState(false);
-	useEffect(() => {
-		setIsMobile(tmpIsMobile);
-	}, []);
+	const isMobile = useIsMobile();
 
 	const { url } = image ?? { url: "" };
 	const { name, avatar, position } = author ?? {
