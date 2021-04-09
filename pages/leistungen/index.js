@@ -54,7 +54,10 @@ const leistungen = () => {
 			<TitleAndDesc {...{ title, desc }} />
 			<Hero title={title} subtitle={desc} />
 			<Container spacing>
-				<Grid.Container gap={XTRA_LARGE_GAP * 2} alignItems="center">
+				<Grid.Container
+					gap={XTRA_LARGE_GAP * XTRA_LARGE_GAP}
+					alignItems="center"
+				>
 					{services.map((service, i) => (
 						<ServicePreview {...service} revert={i % 2 !== 0} key={i} />
 					))}

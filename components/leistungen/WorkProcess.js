@@ -4,9 +4,11 @@ import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";
 import TitleWithDesc from "../misc/TitleWithDesc";
 import { BookOpen, RefreshCcw, Gift } from "@geist-ui/react-icons";
+import useIsMobile from "../hooks/useIsMobile";
 
 const WorkProcess = ({ heading = true }) => {
 	const theme = useTheme();
+	const isMobile = useIsMobile();
 	return (
 		<Container
 			spacing
@@ -67,8 +69,22 @@ const WorkProcess = ({ heading = true }) => {
 							alignItems="flex-start"
 							style={{ textAlign: "start" }}
 						>
-							<h3 style={{ width: "100%", textAlign: "center" }}>{_.icon}</h3>
-							<h3 style={{ width: "100%", textAlign: "center" }}>{_.title}</h3>
+							<h3
+								style={{
+									width: "100%",
+									// textAlign: isMobile ? "start" : "center",
+								}}
+							>
+								{_.icon}
+							</h3>
+							<h3
+								style={{
+									width: "100%",
+									// textAlign: isMobile ? "start" : "center",
+								}}
+							>
+								{_.title}
+							</h3>
 							<ul>
 								{_.content.map((__, i) => (
 									<li key={i}>

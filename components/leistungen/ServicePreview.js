@@ -24,10 +24,18 @@ const ServicePreview = ({
 		/>
 	);
 
+	const Cta = () => (
+		<InternalLink href={href} style={{ width: isMobile ? "100%" : null }}>
+			<Button type="secondary" style={{ width: isMobile ? "100%" : null }}>
+				{cta}
+			</Button>
+		</InternalLink>
+	);
+
 	return (
 		<Grid xs={24} direction="column" alignItems="center" justify="center">
 			<Grid.Container gap={XTRA_LARGE_GAP} alignItems="center" justify="center">
-				<Grid xs={24} sm={revert ? 0 : 10}>
+				<Grid xs={0} sm={revert ? 0 : 10}>
 					<Img />
 				</Grid>
 				<Grid xs={24} sm={14}>
@@ -39,23 +47,18 @@ const ServicePreview = ({
 							<Text p type="secondary">
 								{content}
 							</Text>
-							<InternalLink
-								href={href}
-								style={{ width: isMobile ? "100%" : null }}
-							>
-								<Button
-									type="secondary"
-									style={{ width: isMobile ? "100%" : null }}
-								>
-									{cta}
-								</Button>
-							</InternalLink>
 						</Grid>
+						{!isMobile && <Cta />}
 					</Grid.Container>
 				</Grid>
-				<Grid xs={0} sm={revert ? 10 : 0}>
+				<Grid xs={24} sm={revert ? 10 : 0}>
 					<Img />
 				</Grid>
+				{isMobile && (
+					<Grid xs={24}>
+						<Cta />
+					</Grid>
+				)}
 			</Grid.Container>
 		</Grid>
 	);
