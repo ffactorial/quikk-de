@@ -14,83 +14,83 @@ import { getPreviewText, getReadingTimeInMinutes } from "../../utils/blog";
 import { getArticleBySlug, getArticles } from "../../utils/strapi";
 
 const Article = ({
-  title = "",
-  content = "",
-  image,
-  author,
-  published_at = "",
+	title = "",
+	content = "",
+	image,
+	author,
+	published_at = "",
 }) => {
-  const { url } = image ?? { url: "" };
-  const { name, avatar, position } = author ?? {
-    name: "",
-    avatar: "",
-    position: "",
-  };
+	const { url } = image ?? { url: "" };
+	const { name, avatar, position } = author ?? {
+		name: "",
+		avatar: "",
+		position: "",
+	};
 
-  const notFound =
-    !title ||
-    !content ||
-    !image ||
-    !author ||
-    !published_at ||
-    !url ||
-    !name ||
-    !avatar ||
-    !position;
+	const notFound =
+		!title ||
+		!content ||
+		!image ||
+		!author ||
+		!published_at ||
+		!url ||
+		!name ||
+		!avatar ||
+		!position;
 
-  return notFound ? (
-    <LoadingScreen />
-  ) : (
-    <>
-      <TitleAndDesc {...{ title, desc: getPreviewText(content, 150) }} />
-      <Container spacing>
-        <Grid.Container gap={XTRA_LARGE_GAP} justify="center">
-          <Grid {...breakpoints}>
-            <Breadcrumbs>
-              <Breadcrumbs.Item>
-                <InternalLink href="/">Home</InternalLink>
-              </Breadcrumbs.Item>
-              <Breadcrumbs.Item>
-                <InternalLink href="/blog">Blog</InternalLink>
-              </Breadcrumbs.Item>
-              <Breadcrumbs.Item>Dieser Artikel</Breadcrumbs.Item>
-            </Breadcrumbs>
-          </Grid>
-          <TitleWithDesc {...{ title }} breakpoints={breakpoints} />
-          <Grid {...breakpoints}>
-            <Grid.Container
-              justify="space-between"
-              alignItems="center"
-              gap={MEDIUM_GAP}
-            >
-              <Grid>
-                <InternalLink href="/team">
-                  <AlignedUser {...{ avatar, name, position }} />
-                </InternalLink>
-              </Grid>
-              <Grid>
-                <Grid.Container>
-                  <TextWithIcon icon={<Calendar />}>
-                    {new Date(published_at).toLocaleDateString()}
-                  </TextWithIcon>
-                  <Spacer />
-                  <TextWithIcon icon={<Clock />}>
-                    {getReadingTimeInMinutes(content)} min
-                  </TextWithIcon>
-                </Grid.Container>
-              </Grid>
-            </Grid.Container>
-          </Grid>
-          <Grid {...breakpoints}>
-            <Image alt={title} src={url} />
-          </Grid>
-          <Grid {...breakpoints} direction="column">
-            <ReactMarkdown>{content}</ReactMarkdown>
-          </Grid>
-        </Grid.Container>
-      </Container>
-    </>
-  );
+	return notFound ? (
+		<LoadingScreen />
+	) : (
+		<>
+			<TitleAndDesc {...{ title, desc: getPreviewText(content, 150) }} />
+			<Container spacing>
+				<Grid.Container gap={XTRA_LARGE_GAP} justify="center">
+					<Grid {...breakpoints}>
+						<Breadcrumbs>
+							<Breadcrumbs.Item>
+								<InternalLink href="/">Home</InternalLink>
+							</Breadcrumbs.Item>
+							<Breadcrumbs.Item>
+								<InternalLink href="/blog">Blog</InternalLink>
+							</Breadcrumbs.Item>
+							<Breadcrumbs.Item>Dieser Artikel</Breadcrumbs.Item>
+						</Breadcrumbs>
+					</Grid>
+					<TitleWithDesc {...{ title }} breakpoints={breakpoints} />
+					<Grid {...breakpoints}>
+						<Grid.Container
+							justify="space-between"
+							alignItems="center"
+							gap={MEDIUM_GAP}
+						>
+							<Grid>
+								<InternalLink href="/team">
+									<AlignedUser {...{ avatar, name, position }} />
+								</InternalLink>
+							</Grid>
+							<Grid>
+								<Grid.Container>
+									<TextWithIcon icon={<Calendar />}>
+										{new Date(published_at).toLocaleDateString()}
+									</TextWithIcon>
+									<Spacer />
+									<TextWithIcon icon={<Clock />}>
+										{getReadingTimeInMinutes(content)} min
+									</TextWithIcon>
+								</Grid.Container>
+							</Grid>
+						</Grid.Container>
+					</Grid>
+					<Grid {...breakpoints}>
+						<Image alt={title} src={url} />
+					</Grid>
+					<Grid {...breakpoints} direction="column">
+						<ReactMarkdown>{content}</ReactMarkdown>
+					</Grid>
+				</Grid.Container>
+			</Container>
+		</>
+	);
 };
 
 export default Article;
@@ -101,39 +101,39 @@ export default Article;
  */
 
 export async function getStaticProps(ctx) {
-  const {
-    params: { slug },
-  } = ctx;
+	const {
+		params: { slug },
+	} = ctx;
 
-  const article = await getArticleBySlug(slug);
+	const article = await getArticleBySlug(slug);
 
-  if (!article) {
-    return {
-      redirect: {
-        destination: `/blog`,
-        statusCode: 302,
-      },
-    };
-  } else {
-    return {
-      revalidate: 1,
-      props: {
-        ...article,
-      },
-    };
-  }
+	if (!article) {
+		return {
+			redirect: {
+				destination: `/blog`,
+				statusCode: 302,
+			},
+		};
+	} else {
+		return {
+			revalidate: 1,
+			props: {
+				...article,
+			},
+		};
+	}
 }
 
 export async function getStaticPaths() {
-  const articles = await getArticles();
-  const paths = articles.map(({ slug }) => ({
-    params: {
-      slug,
-    },
-  }));
+	const articles = await getArticles();
+	const paths = articles.map(({ slug }) => ({
+		params: {
+			slug,
+		},
+	}));
 
-  return {
-    paths,
-    fallback: true,
-  };
+	return {
+		paths,
+		fallback: false,
+	};
 }
