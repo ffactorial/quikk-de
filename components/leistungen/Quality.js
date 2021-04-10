@@ -53,8 +53,8 @@ const Quality = ({ heading = true }) => {
 								key={i}
 								xs={24}
 								sm={24}
-								lg={12}
 								md={12}
+								lg={8}
 								xl={8}
 								direction="column"
 								justify="flex-start"

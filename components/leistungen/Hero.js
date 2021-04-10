@@ -17,7 +17,6 @@ const Hero = ({ title = "", subtitle = "", src = hero }) => {
 	const BackButton = () => (
 		<Button
 			type="secondary"
-			ghost
 			onClick={() => router.back()}
 			style={{ width: isMobile ? "100%" : null }}
 			icon={<ChevronLeft />}

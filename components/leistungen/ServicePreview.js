@@ -26,12 +26,12 @@ const ServicePreview = ({
 	);
 
 	const Cta = () => (
-		<InternalLink href={href} style={{ width: "100%" }}>
+		<InternalLink href={href} style={{ width: isMobile ? "100%" : null }}>
 			<Button
-				type="success"
+				type="secondary"
 				icon={!isMobile && revert && <ChevronRight />}
 				iconRight={!isMobile && !revert && <ChevronLeft />}
-				style={{ width: "100%" }}
+				style={{ width: isMobile ? "100%" : null }}
 			>
 				{cta}
 			</Button>

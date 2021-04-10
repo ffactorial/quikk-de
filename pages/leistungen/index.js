@@ -36,7 +36,7 @@ export const services = [
 	},
 	{
 		src: server,
-		title: "Datenbank, Server und APIs",
+		title: "Datenbanken, Server und APIs",
 		content:
 			"Sie möchten Ihre Anwendungen miteinander verbinden, Inhalte in Datenbanken speichern oder neue Schnittstellen entwickeln lassen? Wir helfen Ihnen dabei.",
 		href: "/leistungen/backend",

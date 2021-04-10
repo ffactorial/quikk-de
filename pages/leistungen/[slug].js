@@ -6,6 +6,7 @@ import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../../components/layout/Container";
 import { services } from "./index";
 import ServiceFooter from "../../components/leistungen/ServiceFooter";
+import Use from "../../components/leistungen/Use";
 
 const DetailServicePage = ({ service }) => {
 	const { src, title, content } = service;
@@ -15,10 +16,9 @@ const DetailServicePage = ({ service }) => {
 			<TitleAndDesc {...{ title, desc }} />
 			<Hero title={title} subtitle={desc} src={src} />
 			<Container spacing>
-				<Grid.Container
-					gap={XTRA_LARGE_GAP}
-					alignItems="center"
-				></Grid.Container>
+				<Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
+					<Use service={service} />
+				</Grid.Container>
 			</Container>
 			<ServiceFooter />
 		</>

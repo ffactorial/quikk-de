@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Grid, Text } from "@geist-ui/react";
 import Title from "../misc/Title";
 import { XTRA_LARGE_GAP } from "../../src/constants";
@@ -38,18 +38,20 @@ const technologies = () => {
 									ist heutzutage aber deutlich umfangreicher und vielfältiger
 									einsetzbar. Wir verwenden JavaScript (ES6+) und TypeScript im
 									Front- und Backend unserer Anwendungen und können so auf
-									aktuelle Tools und Frameworks zurückgreifen.
+									aktuelle Tools und Frameworks aus dem npm Ökosystem
+									zurückgreifen.
 								</Text>
 							</Grid>
 							<Grid xs={24} md={12}>
 								<Text type="secondary" style={{ marginBottom: 0 }}>
-									Nutzeroberflächen und Webdesigns realisieren wir mit HTML, CSS
-									und React. Für unsere Webanwendungen verwenden wir Next.js,
-									Desktopanwendungen werden mit Electron erstellt. Für mobile
-									Anwendungen kommen React Native oder Flutter zum Einsatz.
-									Node.js und Express.js erwecken unsere Server und REST
-									Schnittstellen zum Leben. Für die Persistierung von Daten
-									setzen wir MongoDB ein.
+									Nutzeroberflächen und Webdesigns realisieren wir mit React
+									(HTML/CSS). Für unsere Webanwendungen verwenden wir Next.js,
+									Desktopanwendungen werden mit Electron oder alternativ als
+									Progressive Web App (PWA) erstellt. Für mobile Anwendungen
+									kommen React Native, Flutter oder PWA zum Einsatz. Mit Node.js
+									und Express.js bauen wir unsere Server und REST
+									Schnittstellen, Daten und Inhalte werden über MongoDB
+									persistiert.
 								</Text>
 							</Grid>
 						</Grid.Container>
