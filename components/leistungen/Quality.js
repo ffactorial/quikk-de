@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Text, useTheme } from "@geist-ui/react";
-import { XTRA_LARGE_GAP } from "../../src/constants";
+import { Grid, Text } from "@geist-ui/react";
+import { XTRA_LARGE_GAP, XXL_GAP } from "../../src/constants";
 import Container from "../layout/Container";
 import TitleWithDesc from "../misc/TitleWithDesc";
 import { Award, Coffee, UserCheck } from "@geist-ui/react-icons";
@@ -58,13 +58,15 @@ const Quality = ({ heading = true }) => {
 								justify="flex-start"
 								alignItems="flex-start"
 							>
-								<h3
+								<Text
+									b
+									size={`${XXL_GAP}pt`}
 									style={{
 										width: "100%",
 									}}
 								>
 									{React.cloneElement(_.icon, { size: "1rem" })} {_.title}
-								</h3>
+								</Text>
 								<ul>
 									{_.content.map((__, i) => (
 										<li key={i}>
