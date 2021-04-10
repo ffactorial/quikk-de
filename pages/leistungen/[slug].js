@@ -15,11 +15,7 @@ const DetailServicePage = ({ service }) => {
 		<>
 			<TitleAndDesc {...{ title, desc }} />
 			<Hero title={title} subtitle={desc} src={src} />
-			<Container spacing>
-				<Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
-					<Use service={service} />
-				</Grid.Container>
-			</Container>
+			<Use service={service} />
 			<ServiceFooter />
 		</>
 	);

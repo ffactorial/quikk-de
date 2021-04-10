@@ -29,8 +29,8 @@ const ServicePreview = ({
 		<InternalLink href={href} style={{ width: isMobile ? "100%" : null }}>
 			<Button
 				type="secondary"
-				icon={!isMobile && revert && <ChevronRight />}
-				iconRight={!isMobile && !revert && <ChevronLeft />}
+				// icon={!isMobile && revert && <ChevronRight />}
+				// iconRight={!isMobile && !revert && <ChevronLeft />}
 				style={{ width: isMobile ? "100%" : null }}
 			>
 				{cta}

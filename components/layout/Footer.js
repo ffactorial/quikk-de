@@ -89,12 +89,12 @@ const Footer = () => {
 						individuelle Software
 					</InternalLink>
 					,{" "}
-					<InternalLink href="/leistungen/mobile-apps">
-						mobile Apps
-					</InternalLink>{" "}
-					und{" "}
 					<InternalLink href="/leistungen/webentwicklung">
 						attraktive Webdesigns
+					</InternalLink>{" "}
+					und{" "}
+					<InternalLink href="/leistungen/mobile-apps">
+						mobile Apps
 					</InternalLink>{" "}
 					in Minden und liefern Ihnen maßgeschneiderte Lösungen für digitale
 					Herausforderungen. Wir sind ein junges und agiles Tech-Startup mit
