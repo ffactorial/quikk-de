@@ -10,9 +10,9 @@ const Divider = () => {
 				.divider {
 					width: 69px;
 					height: 2px;
-					margin: ${theme.layout.gap} 0;
-					border-left: 24.3px solid ${theme.palette.success};
-					background-color: ${theme.palette.accents_1};
+					margin: ${theme.layout.gapHalf} 0;
+					border-left: 42px solid ${theme.palette.success};
+					background-color: ${theme.palette.accents_2};
 				}
 				.wrapper {
 					width: 100%;

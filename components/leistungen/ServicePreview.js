@@ -4,6 +4,7 @@ import { XTRA_LARGE_GAP } from "../../src/constants";
 import useIsMobile from "../hooks/useIsMobile";
 import InternalLink from "../misc/InternalLink";
 import Title from "../misc/Title";
+import { ChevronRight, ChevronLeft } from "@geist-ui/react-icons";
 
 const ServicePreview = ({
 	src = "",
@@ -11,7 +12,7 @@ const ServicePreview = ({
 	content = "",
 	revert = false,
 	alt = "",
-	cta = "Mehr Informationen",
+	cta = "Mehr erfahren",
 	href = "",
 }) => {
 	const isMobile = useIsMobile();
@@ -25,8 +26,13 @@ const ServicePreview = ({
 	);
 
 	const Cta = () => (
-		<InternalLink href={href} style={{ width: isMobile ? "100%" : null }}>
-			<Button type="secondary" style={{ width: isMobile ? "100%" : null }}>
+		<InternalLink href={href} style={{ width: "100%" }}>
+			<Button
+				type="success"
+				icon={!isMobile && revert && <ChevronRight />}
+				iconRight={!isMobile && !revert && <ChevronLeft />}
+				style={{ width: "100%" }}
+			>
 				{cta}
 			</Button>
 		</InternalLink>

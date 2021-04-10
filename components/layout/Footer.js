@@ -6,7 +6,7 @@ import {
 	Text,
 	useTheme,
 } from "@geist-ui/react";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MEDIUM_GAP } from "../../src/constants";
 import LocationLinks from "./footer/LocationLinks";
 import Container from "./Container";
@@ -16,6 +16,7 @@ import CompanyLinks from "./footer/CompanyLinks";
 import SocialLinks from "./footer/SocialLinks";
 import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
 import InternalLink from "../misc/InternalLink";
+import ExternalLink from "../misc/ExternalLink";
 import useIsMobile from "../hooks/useIsMobile";
 
 const Footer = () => {
@@ -70,7 +71,9 @@ const Footer = () => {
 			title={<SanitizeHeading title="Vor Ort" />}
 			content={
 				<SanitizeContent>
-					<LocationLinks />
+					<ExternalLink href="https://g.page/quikk?share">
+						<LocationLinks />
+					</ExternalLink>
 				</SanitizeContent>
 			}
 		/>,

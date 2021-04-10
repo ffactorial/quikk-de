@@ -1,16 +1,16 @@
 import { Grid } from "@geist-ui/react";
 import React from "react";
 import Hero from "../../components/leistungen/Hero";
-import WorkProcess from "../../components/leistungen/WorkProcess";
 import TitleAndDesc from "../../components/meta/TitleAndDesc";
-import Technologies from "../../components/leistungen/Technologies";
 import ServicePreview from "../../components/leistungen/ServicePreview";
 import apps from "../../assets/images/apps.svg";
 import webdesign from "../../assets/images/webdesign.svg";
 import server from "../../assets/images/server.svg";
 import software from "../../assets/images/software.svg";
-import { XTRA_LARGE_GAP } from "../../src/constants";
+import { XTRA_LARGE_GAP, XXL_GAP } from "../../src/constants";
 import Container from "../../components/layout/Container";
+import ServiceFooter from "../../components/leistungen/ServiceFooter";
+import useIsMobile from "../../components/hooks/useIsMobile";
 
 export const services = [
 	{
@@ -44,6 +44,7 @@ export const services = [
 ];
 
 const leistungen = () => {
+	const isMobile = useIsMobile();
 	const title =
 		"Die perfekte Ergänzung: Individuelle Software & attraktives Webdesign.";
 	const desc =
@@ -53,18 +54,20 @@ const leistungen = () => {
 		<>
 			<TitleAndDesc {...{ title, desc }} />
 			<Hero title={title} subtitle={desc} />
-			<Container spacing>
-				<Grid.Container
-					gap={XTRA_LARGE_GAP * XTRA_LARGE_GAP}
-					alignItems="center"
-				>
+			<Container
+				spacing
+				style={{
+					marginTop: `${isMobile ? 0 : XTRA_LARGE_GAP}em`,
+					marginBottom: `${isMobile ? 0 : XTRA_LARGE_GAP}em`,
+				}}
+			>
+				<Grid.Container gap={XXL_GAP} alignItems="center">
 					{services.map((service, i) => (
-						<ServicePreview {...service} revert={i % 2 !== 0} key={i} />
+						<ServicePreview {...service} revert={!!(i % 2)} key={i} />
 					))}
 				</Grid.Container>
 			</Container>
-			<WorkProcess />
-			<Technologies />
+			<ServiceFooter />
 		</>
 	);
 };

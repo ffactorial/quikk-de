@@ -1,4 +1,5 @@
 export const XTRA_LARGE_GAP = 4;
+export const XXL_GAP = XTRA_LARGE_GAP * XTRA_LARGE_GAP;
 export const LARGE_GAP = XTRA_LARGE_GAP / 2;
 export const MEDIUM_GAP = LARGE_GAP / 2;
 export const SMALL_GAP = MEDIUM_GAP / 2;

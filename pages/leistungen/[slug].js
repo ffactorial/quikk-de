@@ -1,12 +1,11 @@
 import React from "react";
 import { Grid } from "@geist-ui/react";
 import Hero from "../../components/leistungen/Hero";
-import WorkProcess from "../../components/leistungen/WorkProcess";
 import TitleAndDesc from "../../components/meta/TitleAndDesc";
-import Technologies from "../../components/leistungen/Technologies";
 import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../../components/layout/Container";
 import { services } from "./index";
+import ServiceFooter from "../../components/leistungen/ServiceFooter";
 
 const DetailServicePage = ({ service }) => {
 	const { src, title, content } = service;
@@ -21,8 +20,7 @@ const DetailServicePage = ({ service }) => {
 					alignItems="center"
 				></Grid.Container>
 			</Container>
-			<WorkProcess />
-			<Technologies />
+			<ServiceFooter />
 		</>
 	);
 };

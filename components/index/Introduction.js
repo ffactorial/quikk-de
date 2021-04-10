@@ -1,6 +1,6 @@
 import { Grid } from "@geist-ui/react";
 import React from "react";
-import { XTRA_LARGE_GAP } from "../../src/constants";
+import { XXL_GAP } from "../../src/constants";
 import Container from "../layout/Container";
 import joyce from "../../assets/images/joyce_landing.jpg";
 import minden from "../../assets/images/minden.jpg";
@@ -11,7 +11,7 @@ const Introduction = () => {
 	return (
 		<section>
 			<Container spacing>
-				<Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
+				<Grid.Container gap={XXL_GAP} alignItems="center">
 					<IntroductionSection
 						src={joyce}
 						title="Ihr Partner"

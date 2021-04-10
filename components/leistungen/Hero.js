@@ -6,6 +6,7 @@ import hero from "../../assets/images/puzzle.svg";
 import useIsSubpage from "../hooks/useIsSubpage";
 import { useRouter } from "next/router";
 import useIsMobile from "../hooks/useIsMobile";
+import { ChevronLeft } from "@geist-ui/react-icons";
 
 const Hero = ({ title = "", subtitle = "", src = hero }) => {
 	const theme = useTheme();
@@ -16,8 +17,10 @@ const Hero = ({ title = "", subtitle = "", src = hero }) => {
 	const BackButton = () => (
 		<Button
 			type="secondary"
+			ghost
 			onClick={() => router.back()}
 			style={{ width: isMobile ? "100%" : null }}
+			icon={<ChevronLeft />}
 		>
 			Zurück
 		</Button>
