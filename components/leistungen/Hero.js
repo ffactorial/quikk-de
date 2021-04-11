@@ -4,25 +4,20 @@ import { XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";
 import hero from "../../assets/images/puzzle.svg";
 import useIsSubpage from "../hooks/useIsSubpage";
-import { useRouter } from "next/router";
 import useIsMobile from "../hooks/useIsMobile";
-import { ChevronLeft } from "@geist-ui/react-icons";
+import InternalLink from "../misc/InternalLink";
 
 const Hero = ({ title = "", subtitle = "", src = hero }) => {
 	const theme = useTheme();
-	const router = useRouter();
 	const isMobile = useIsMobile();
-	const { isSubPath } = useIsSubpage();
+	const { isSubPath, parent } = useIsSubpage();
 
 	const BackButton = () => (
-		<Button
-			type="secondary"
-			onClick={() => router.back()}
-			style={{ width: isMobile ? "100%" : null }}
-			icon={<ChevronLeft />}
-		>
-			Zurück
-		</Button>
+		<InternalLink style={{ width: isMobile ? "100%" : null }} href={parent}>
+			<Button type="secondary" style={{ width: isMobile ? "100%" : null }}>
+				Zu den Leistungen
+			</Button>
+		</InternalLink>
 	);
 
 	return (

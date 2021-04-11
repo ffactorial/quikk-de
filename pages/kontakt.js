@@ -87,9 +87,12 @@ const kontakt = () => {
 					</TextWithIcon>
 				</ContactText>
 				<ContactText>
-					<TextWithIcon icon={<MapPin />}>
+					<ExternalLinkWithIcon
+						href="https://g.page/quikk?share"
+						icon={<MapPin />}
+					>
 						Hahler Straße 285, 32427 Minden
-					</TextWithIcon>
+					</ExternalLinkWithIcon>
 				</ContactText>
 			</Grid.Container>
 		</Grid>
