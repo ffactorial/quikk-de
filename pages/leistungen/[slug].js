@@ -38,15 +38,6 @@ export async function getStaticProps(context) {
 	} = context;
 	const service = services.find((s) => s.href.includes(slug));
 
-	if (isObjectEmpty(service)) {
-		return {
-			redirect: {
-				destination: "/",
-				permanent: true,
-			},
-		};
-	}
-
 	return {
 		props: { service },
 	};

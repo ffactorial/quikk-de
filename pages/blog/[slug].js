@@ -108,15 +108,6 @@ export async function getStaticProps(ctx) {
 
 	const article = await getArticleBySlug(slug);
 
-	if (isObjectEmpty(article)) {
-		return {
-			redirect: {
-				destination: `/blog`,
-				statusCode: 302,
-			},
-		};
-	}
-
 	return {
 		revalidate: 1,
 		props: {
