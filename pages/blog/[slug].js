@@ -126,14 +126,10 @@ export async function getStaticProps(ctx) {
 
 export async function getStaticPaths() {
 	const articles = await getArticles();
-	const paths = articles.map(({ slug }) => ({
-		params: {
-			slug,
-		},
-	}));
+	const paths = articles.map(({ slug }) => `/blog/${slug}`);
 
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 }

@@ -23,16 +23,7 @@ const DetailServicePage = ({ service }) => {
 };
 
 export async function getStaticPaths() {
-	const paths = services.map((service) => {
-		const spreadedPath = service.href.split("/");
-		const slug = spreadedPath[spreadedPath.length - 1];
-
-		return {
-			params: {
-				slug,
-			},
-		};
-	});
+	const paths = services.map(({ href }) => href);
 
 	return {
 		paths,
