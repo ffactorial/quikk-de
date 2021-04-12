@@ -1,6 +1,7 @@
-import { Breadcrumbs, Grid, Image, Loading, Spacer } from "@geist-ui/react";
+import { Breadcrumbs, Grid, Image, Spacer } from "@geist-ui/react";
 import { Calendar, Clock } from "@geist-ui/react-icons";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import Container from "../../components/layout/Container";
 import TitleAndDesc from "../../components/meta/TitleAndDesc";
@@ -20,6 +21,7 @@ const Article = ({
 	author,
 	published_at = "",
 }) => {
+	const router = useRouter();
 	const { url } = image ?? { url: "" };
 	const { name, avatar, position } = author ?? {
 		name: "",
@@ -27,16 +29,23 @@ const Article = ({
 		position: "",
 	};
 
-	const notFound =
-		!title ||
-		!content ||
-		!image ||
-		!author ||
-		!published_at ||
-		!url ||
-		!name ||
-		!avatar ||
-		!position;
+	const notFound = [
+		title,
+		content,
+		image,
+		author,
+		published_at,
+		url,
+		name,
+		avatar,
+		position,
+	].some((el) => !el);
+
+	useEffect(() => {
+		if (notFound) {
+			router.push("/404");
+		}
+	}, [router]);
 
 	return notFound ? (
 		<LoadingScreen />
