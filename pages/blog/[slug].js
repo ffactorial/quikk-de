@@ -11,7 +11,6 @@ import { TextWithIcon } from "../../components/misc/WithIconHelper";
 import LoadingScreen from "../../screens/LoadingScreen";
 import { breakpoints, MEDIUM_GAP, XTRA_LARGE_GAP } from "../../src/constants";
 import { getPreviewText, getReadingTimeInMinutes } from "../../utils/blog";
-import { isObjectEmpty } from "../../utils/misc";
 import { getArticleBySlug, getArticles } from "../../utils/strapi";
 
 const Article = ({
