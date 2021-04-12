@@ -124,7 +124,7 @@ export const services = [
 			{
 				title: "Intuitive Bedienung",
 				content:
-					"Zusammen mit einer gemeinsamen Einführung sorgt ein klar strukturiertes Layout und eine intuitive Bedienung unserer Apps dafür, dass Sie sich stets zurechtfinden.",
+					"Zusammen mit einer gemeinsamen Einführung sorgt ein klar strukturiertes Layout und eine intuitive Bedienung unserer Apps dafür, dass sich NutzerInnen zurechtfinden und Freude an der Bedienung haben.",
 			},
 			{
 				title: "Für Android und iOS",

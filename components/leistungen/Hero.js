@@ -33,11 +33,6 @@ const Hero = ({ title = "", subtitle = "", src = hero }) => {
 		>
 			<Container spacing>
 				<Grid.Container gap={XTRA_LARGE_GAP} alignItems="center">
-					{isSubPath && isMobile && (
-						<Grid xs={24}>
-							<BackButton />
-						</Grid>
-					)}
 					<Grid xs={24} sm={24} md={14} direction="column">
 						<Text h1 style={{ lineHeight: 1 }}>
 							{title}
@@ -50,7 +45,7 @@ const Hero = ({ title = "", subtitle = "", src = hero }) => {
 					<Grid xs={24} sm={24} md={10} justify="center">
 						<Image
 							src={src}
-							alt="QUIKK Software Softwareentwicklung"
+							alt={`${title} bei QUIKK Software & Webdesign`}
 							style={{ maxWidth: "300px" }}
 						/>
 					</Grid>
