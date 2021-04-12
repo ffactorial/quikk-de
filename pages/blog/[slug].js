@@ -11,6 +11,7 @@ import { TextWithIcon } from "../../components/misc/WithIconHelper";
 import LoadingScreen from "../../screens/LoadingScreen";
 import { breakpoints, MEDIUM_GAP, XTRA_LARGE_GAP } from "../../src/constants";
 import { getPreviewText, getReadingTimeInMinutes } from "../../utils/blog";
+import { isObjectEmpty } from "../../utils/misc";
 import { getArticleBySlug, getArticles } from "../../utils/strapi";
 
 const Article = ({
@@ -107,21 +108,21 @@ export async function getStaticProps(ctx) {
 
 	const article = await getArticleBySlug(slug);
 
-	if (!article) {
+	if (isObjectEmpty(article)) {
 		return {
 			redirect: {
 				destination: `/blog`,
 				statusCode: 302,
 			},
 		};
-	} else {
-		return {
-			revalidate: 1,
-			props: {
-				...article,
-			},
-		};
 	}
+
+	return {
+		revalidate: 1,
+		props: {
+			...article,
+		},
+	};
 }
 
 export async function getStaticPaths() {

@@ -6,6 +6,7 @@ import ServiceFooter from "../../components/leistungen/ServiceFooter";
 import Use from "../../components/leistungen/Use";
 import Mission from "../../components/leistungen/Mission";
 import Cta from "../../components/leistungen/Cta";
+import { isObjectEmpty } from "../../utils/misc";
 
 const DetailServicePage = ({ service }) => {
 	const { src, title, content } = service;
@@ -37,7 +38,7 @@ export async function getStaticProps(context) {
 	} = context;
 	const service = services.find((s) => s.href.includes(slug));
 
-	if (!service) {
+	if (isObjectEmpty(service)) {
 		return {
 			redirect: {
 				destination: "/",
