@@ -53,9 +53,11 @@ const ContactRef = () => {
 							</Text>
 							{isMobile && <Cta />}
 						</Grid>
-						<Grid xs={24} sm={24} md alignItems="center" justify="center">
-							{!isMobile && <Cta />}
-						</Grid>
+						{!isMobile && (
+							<Grid xs={24} sm={24} md alignItems="center" justify="center">
+								<Cta />
+							</Grid>
+						)}
 					</Grid.Container>
 				</Container>
 			</section>
