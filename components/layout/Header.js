@@ -7,6 +7,7 @@ import MobileNavBar from "./header/MobileNavBar";
 import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
 import { SMALL_GAP } from "../../src/constants";
 import useIsMobile from "../hooks/useIsMobile";
+import quikk from "../../assets/logos/logo_light.svg";
 
 const Header = () => {
 	const theme = useTheme();
@@ -35,11 +36,26 @@ const Header = () => {
 				<Spacer y={SMALL_GAP} />
 				<Container>
 					<Grid.Container gap={0} justify="space-between" alignItems="center">
-						<Grid>
-							<InternalLink href="/">
-								<Text h3 style={{ margin: 0, color: theme.palette.background }}>
-									QUIKK
-								</Text>
+						<Grid
+							style={{
+								alignItems: "center",
+								justifyContent: "center",
+								display: "flex",
+							}}
+						>
+							<InternalLink
+								href="/"
+								style={{
+									alignItems: "center",
+									justifyContent: "center",
+									height: "100%",
+								}}
+							>
+								<img
+									src={quikk}
+									alt="QUIKK Software Logo"
+									style={{ height: "2em" }}
+								/>
 							</InternalLink>
 						</Grid>
 						<Grid>

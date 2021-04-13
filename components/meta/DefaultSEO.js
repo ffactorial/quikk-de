@@ -116,9 +116,9 @@ const DefaultSEO = () => {
 				sizes="16x16"
 				href="/favicon-16x16.png"
 			/>
-			<meta name="msapplication-TileColor" content="#ffffff" />
+			<meta name="msapplication-TileColor" content="#21242D" />
 			<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-			<meta name="theme-color" content="#ffffff" />
+			<meta name="theme-color" content="#21242D" />
 		</Head>
 	);
 };
