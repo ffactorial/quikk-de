@@ -16,6 +16,14 @@ const ContactRef = () => {
 		(pathname) => pathname !== router.pathname,
 	);
 
+	const Cta = () => (
+		<InternalLink href="/kontakt" style={{ width: isMobile ? "100%" : null }}>
+			<Button type="success" style={{ width: isMobile ? "100%" : null }}>
+				Zum Kontaktformular
+			</Button>
+		</InternalLink>
+	);
+
 	return (
 		displayContactRef && (
 			<section style={{ backgroundColor: theme.palette.accents_1 }}>
@@ -37,25 +45,16 @@ const ContactRef = () => {
 							<Text
 								type="secondary"
 								p
-								style={{ marginBottom: 0, width: "100%" }}
+								style={{ marginBottom: isMobile ? null : 0, width: "100%" }}
 							>
 								Kein Problem! In einem kostenlosen Erstgespräch am Telefon oder
 								über Microsoft Teams lernen wir uns kennen und erarbeiten
 								gemeinsam mit Ihnen ein Lösungskonzept für Ihre Ziele.
 							</Text>
+							{isMobile && <Cta />}
 						</Grid>
 						<Grid xs={24} sm={24} md alignItems="center" justify="center">
-							<InternalLink
-								href="/kontakt"
-								style={{ width: isMobile ? "100%" : null }}
-							>
-								<Button
-									type="success"
-									style={{ width: isMobile ? "100%" : null }}
-								>
-									Zum Kontaktformular
-								</Button>
-							</InternalLink>
+							{!isMobile && <Cta />}
 						</Grid>
 					</Grid.Container>
 				</Container>

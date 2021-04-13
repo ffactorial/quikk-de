@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Text } from "@geist-ui/react";
-import { XTRA_LARGE_GAP } from "../../src/constants";
+import { breakpoints, XTRA_LARGE_GAP } from "../../src/constants";
 import Container from "../layout/Container";
 import Title from "../misc/Title";
 import useIsMobile from "../hooks/useIsMobile";
@@ -17,7 +17,7 @@ const Mission = () => {
 				direction={isMobile ? "column" : "row-reverse"}
 				style={{ textAlign: "start" }}
 			>
-				<Grid xs={24} sm={14} direction="column">
+				<Grid {...breakpoints} direction="column">
 					<Title title="Unser Versprechen" centered={false} />
 					<Text type="secondary" p>
 						Wir lassen Sie nicht im Regen stehen und packen da an, wo es

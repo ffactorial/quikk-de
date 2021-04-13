@@ -1,5 +1,5 @@
 import React from "react";
-import { XTRA_LARGE_GAP } from "../../src/constants";
+import { breakpoints, XTRA_LARGE_GAP } from "../../src/constants";
 import { Grid, Text, Image, Button } from "@geist-ui/react";
 import Container from "../layout/Container";
 import InternalLink from "../misc/InternalLink";
@@ -19,7 +19,7 @@ const Cta = ({ title }) => {
 				direction={isMobile ? "column" : "row-reverse"}
 				style={{ textAlign: "start" }}
 			>
-				<Grid xs={24} sm={14} direction="column">
+				<Grid {...breakpoints} md={16} direction="column">
 					<Title title="Gehen Sie den ersten Schritt" centered={false} />
 					<Text type="secondary" p>
 						Und lassen Sie uns gemeinsam an Ihrem Projekt arbeiten! Dabei spielt
@@ -36,7 +36,7 @@ const Cta = ({ title }) => {
 						</Button>
 					</InternalLink>
 				</Grid>
-				<Grid xs={24} sm={10}>
+				<Grid {...{ xs: 24, sm: 24, md: 8, lg: 8 }}>
 					<Image src={joyce} alt={`QUIKK Software: ${title}`} />
 				</Grid>
 			</Grid.Container>
