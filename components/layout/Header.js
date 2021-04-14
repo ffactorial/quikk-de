@@ -54,7 +54,7 @@ const Header = () => {
 								<img
 									src={quikk}
 									alt="QUIKK Software Logo"
-									style={{ height: "2em" }}
+									style={{ height: "1.5em" }}
 								/>
 							</InternalLink>
 						</Grid>
