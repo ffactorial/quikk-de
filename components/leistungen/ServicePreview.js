@@ -4,7 +4,7 @@ import { XTRA_LARGE_GAP } from "../../src/constants";
 import useIsMobile from "../hooks/useIsMobile";
 import InternalLink from "../misc/InternalLink";
 import Title from "../misc/Title";
-import { ChevronRight, ChevronLeft } from "@geist-ui/react-icons";
+import { createLeistungenHrefFromId } from "../../utils/misc";
 
 const ServicePreview = ({
 	src = "",
@@ -13,7 +13,8 @@ const ServicePreview = ({
 	revert = false,
 	alt = "",
 	cta = "Mehr erfahren",
-	href = "",
+	id = "",
+	...rest
 }) => {
 	const isMobile = useIsMobile();
 	alt = alt.length > 0 ? alt : `QUIKK Software: ${title}`;
@@ -26,20 +27,25 @@ const ServicePreview = ({
 	);
 
 	const Cta = () => (
-		<InternalLink href={href} style={{ width: isMobile ? "100%" : null }}>
-			<Button
-				type="secondary"
-				// icon={!isMobile && revert && <ChevronRight />}
-				// iconRight={!isMobile && !revert && <ChevronLeft />}
-				style={{ width: isMobile ? "100%" : null }}
-			>
+		<InternalLink
+			href={createLeistungenHrefFromId(id)}
+			style={{ width: isMobile ? "100%" : null }}
+		>
+			<Button type="secondary" style={{ width: isMobile ? "100%" : null }}>
 				{cta}
 			</Button>
 		</InternalLink>
 	);
 
 	return (
-		<Grid xs={24} direction="column" alignItems="center" justify="center">
+		<Grid
+			xs={24}
+			direction="column"
+			alignItems="center"
+			justify="center"
+			id={id}
+			{...rest}
+		>
 			<Grid.Container gap={XTRA_LARGE_GAP} alignItems="center" justify="center">
 				<Grid xs={0} sm={revert ? 0 : 10}>
 					<Img />

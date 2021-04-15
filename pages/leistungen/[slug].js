@@ -6,6 +6,7 @@ import ServiceFooter from "../../components/leistungen/ServiceFooter";
 import Use from "../../components/leistungen/Use";
 import Mission from "../../components/leistungen/Mission";
 import Cta from "../../components/leistungen/Cta";
+import { createLeistungenHrefFromId } from "../../utils/misc";
 
 const DetailServicePage = ({ service }) => {
 	const { src, title, content } = service;
@@ -23,7 +24,7 @@ const DetailServicePage = ({ service }) => {
 };
 
 export async function getStaticPaths() {
-	const paths = services.map(({ href }) => href);
+	const paths = services.map(({ id }) => createLeistungenHrefFromId(id));
 
 	return {
 		paths,
@@ -35,7 +36,7 @@ export async function getStaticProps(context) {
 	const {
 		params: { slug },
 	} = context;
-	const service = services.find((s) => s.href.includes(slug));
+	const service = services.find(({ id }) => id === slug);
 
 	return {
 		props: { service },

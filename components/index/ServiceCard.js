@@ -9,13 +9,14 @@ import {
 import React from "react";
 import InternalLink from "../misc/InternalLink";
 import Divider from "../misc/Divider";
+import { createLeistungenHrefFromId } from "../../utils/misc";
 
-const ServiceCard = ({ title, content, icon }) => {
+const ServiceCard = ({ title, content, icon, id = null }) => {
 	const theme = useTheme();
 	return (
 		<Grid xs={24} sm={12} md={8}>
 			<InternalLink
-				href="/leistungen"
+				href={createLeistungenHrefFromId(id)}
 				style={{ width: "100%", height: "100%" }}
 			>
 				<Card

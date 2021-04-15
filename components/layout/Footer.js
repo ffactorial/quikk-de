@@ -7,7 +7,12 @@ import {
 	useTheme,
 } from "@geist-ui/react";
 import React from "react";
-import { MEDIUM_GAP } from "../../src/constants";
+import {
+	ID_MOBILE_APPS,
+	ID_SOFTWARE,
+	ID_WEBDESIGN_AND_ECOMMERCE,
+	MEDIUM_GAP,
+} from "../../src/constants";
 import LocationLinks from "./footer/LocationLinks";
 import Container from "./Container";
 import LegalLinks from "./footer/LegalLinks";
@@ -85,20 +90,23 @@ const Footer = () => {
 				<Text small>
 					Wir bei QUIKK Software & Webdesign UG (haftungsbeschränkt) entwickeln
 					seit Oktober 2020{" "}
-					<InternalLink href="/leistungen/softwareentwicklung">
+					<InternalLink href={`/leistungen/${ID_SOFTWARE}`}>
 						individuelle Software
 					</InternalLink>
 					,{" "}
-					<InternalLink href="/leistungen/webentwicklung">
+					<InternalLink href={`/leistungen/${ID_WEBDESIGN_AND_ECOMMERCE}`}>
 						attraktive Webdesigns
 					</InternalLink>{" "}
 					und{" "}
-					<InternalLink href="/leistungen/mobile-apps">
+					<InternalLink href={`/leistungen/${ID_MOBILE_APPS}`}>
 						mobile Apps
 					</InternalLink>{" "}
-					in Minden und liefern Ihnen maßgeschneiderte Lösungen für digitale
-					Herausforderungen. Wir sind ein junges und agiles Tech-Startup mit
-					Fokus auf Qualität und Transparenz.
+					in Minden und liefern Ihnen{" "}
+					<InternalLink href="/leistungen">
+						maßgeschneiderte Lösungen
+					</InternalLink>{" "}
+					für digitale Herausforderungen. Wir sind ein junges und agiles
+					Tech-Startup mit Fokus auf Qualität und Transparenz.
 				</Text>
 			</SanitizeContent>
 		);

@@ -7,13 +7,17 @@ import apps from "../../assets/images/apps.svg";
 import webdesign from "../../assets/images/webdesign.svg";
 import server from "../../assets/images/server.svg";
 import software from "../../assets/images/software.svg";
-import { XTRA_LARGE_GAP, XXL_GAP } from "../../src/constants";
+import {
+	ID_DATABASES_SERVERS_AND_APIS,
+	ID_MOBILE_APPS,
+	ID_SOFTWARE,
+	ID_WEBDESIGN_AND_ECOMMERCE,
+	XTRA_LARGE_GAP,
+	XXL_GAP,
+} from "../../src/constants";
 import Container from "../../components/layout/Container";
 import ServiceFooter from "../../components/leistungen/ServiceFooter";
 import useIsMobile from "../../components/hooks/useIsMobile";
-
-const placeholder =
-	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
 export const services = [
 	{
@@ -21,7 +25,7 @@ export const services = [
 		title: "Software und Tools",
 		content:
 			"Professionelle und zielgerichtete Entwicklung von Software. Mehr Funktionalität und Unterstützung für Ihren Arbeitsalltag durch eine individuelle Implementierung.",
-		href: "/leistungen/softwareentwicklung",
+		id: ID_SOFTWARE,
 		use: [
 			{
 				title: "Individualentwicklung",
@@ -70,7 +74,7 @@ export const services = [
 		title: "Webdesign und E-Commerce",
 		content:
 			"Für einen attraktiven und professionellen Auftritt im Web, der Sie und Ihr Unternehmen wiederspiegelt. Mit eBay/mobile.de Integration und SEO.",
-		href: "/leistungen/webentwicklung",
+		id: ID_WEBDESIGN_AND_ECOMMERCE,
 		use: [
 			{
 				title: "Professionell, individuell, einzigartig",
@@ -109,7 +113,7 @@ export const services = [
 		title: "Mobile Apps",
 		content:
 			"Sind Sie oft unterwegs oder müssen jederzeit erreichbar sein? Dann muss eine flexible Lösung her: Wir entwickeln Apps für Android und iOS mit Offline Verfügbarkeit.",
-		href: "/leistungen/mobile-apps",
+		id: ID_MOBILE_APPS,
 		use: [
 			{
 				title: "Software für die Hosentasche",
@@ -138,7 +142,7 @@ export const services = [
 		title: "Datenbanken, Server und APIs",
 		content:
 			"Sie möchten Ihre Anwendungen miteinander verbinden, Inhalte in Datenbanken speichern oder neue Schnittstellen entwickeln lassen? Wir helfen Ihnen dabei.",
-		href: "/leistungen/backend",
+		id: ID_DATABASES_SERVERS_AND_APIS,
 		use: [
 			{
 				title: "Ganzheitliche Lösungen",
@@ -179,7 +183,12 @@ const leistungen = () => {
 			>
 				<Grid.Container gap={XXL_GAP} alignItems="center">
 					{services.map((service, i) => (
-						<ServicePreview {...service} revert={!!(i % 2)} key={i} />
+						<ServicePreview
+							{...service}
+							revert={!!(i % 2)}
+							key={i}
+							id={service.id}
+						/>
 					))}
 				</Grid.Container>
 			</Container>

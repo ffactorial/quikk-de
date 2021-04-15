@@ -7,7 +7,7 @@ import MobileNavBar from "./header/MobileNavBar";
 import { QUIKK_dark, QUIKK_light } from "../../styles/themes";
 import { SMALL_GAP } from "../../src/constants";
 import useIsMobile from "../hooks/useIsMobile";
-import quikk from "../../assets/logos/logo_light.svg";
+import quikk from "../../assets/logos/logo_light_quikk_only.svg";
 
 const Header = () => {
 	const theme = useTheme();
@@ -21,6 +21,8 @@ const Header = () => {
 		Karriere: "/karriere",
 		Kontakt: "/kontakt",
 	};
+
+	const logoHeightInEm = 1.243;
 
 	return (
 		<GeistProvider themes={[QUIKK_light, QUIKK_dark]} themeType="QUIKK_dark">
@@ -54,7 +56,10 @@ const Header = () => {
 								<img
 									src={quikk}
 									alt="QUIKK Software Logo"
-									style={{ height: "1.5em" }}
+									style={{
+										height: `${logoHeightInEm}em`,
+										marginTop: `${logoHeightInEm / 4}em`,
+									}}
 								/>
 							</InternalLink>
 						</Grid>
