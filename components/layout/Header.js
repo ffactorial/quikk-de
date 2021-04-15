@@ -22,7 +22,7 @@ const Header = () => {
 		Kontakt: "/kontakt",
 	};
 
-	const logoHeightInEm = 1.243;
+	const logoHeightInEm = 1.5;
 
 	return (
 		<GeistProvider themes={[QUIKK_light, QUIKK_dark]} themeType="QUIKK_dark">
@@ -58,7 +58,7 @@ const Header = () => {
 									alt="QUIKK Software Logo"
 									style={{
 										height: `${logoHeightInEm}em`,
-										marginTop: `${logoHeightInEm / 4}em`,
+										marginTop: `${logoHeightInEm / 6}em`,
 									}}
 								/>
 							</InternalLink>
