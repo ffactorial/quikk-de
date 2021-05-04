@@ -83,7 +83,7 @@ const kontakt = () => {
 				</ContactText>
 				<ContactText>
 					<TextWithIcon icon={<Clock />}>
-						Mo. - Fr. von 09:00 - 17:00
+						Mo. - Fr. von 10:00 - 18:00
 					</TextWithIcon>
 				</ContactText>
 				<ContactText>
